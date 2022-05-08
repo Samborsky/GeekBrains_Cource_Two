@@ -31,7 +31,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="VK_logo" width="5520" height="960"/>
+        <image name="VK_logo" width="552" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
