@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+//MARK: - кнопка Войти
     @IBAction func loginButtonPressing(_ sender: UIButton) {
 
         guard let login = loginTextField.text,
@@ -54,5 +54,13 @@ class ViewController: UIViewController {
             present(alertVC, animated: true, completion: nil)
         }
     }
+//MARK: - Кнопка Зарегистрироваться
+
+    @IBAction func registationButton(_ sender: UIButton) {
+
+print("вы перешли на страницу регистрации")
+
+    }
+
 
 }
