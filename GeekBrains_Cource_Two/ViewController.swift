@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
 //MARK: - кнопка Войти
     @IBAction func loginButtonPressing(_ sender: UIButton) {
 
@@ -56,5 +55,8 @@ class ViewController: UIViewController {
     }
 //MARK: - Кнопка Зарегистрироваться
 
+    @IBAction func RegistrationButton(_ sender: Any) {
+        performSegue(withIdentifier: "toLoginView", sender: nil)
+    }
 
 }
