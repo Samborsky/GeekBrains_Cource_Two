@@ -33,6 +33,10 @@ class ViewControllerRegistration: UIViewController {
 
         if login.count >= 4 && password.count >= 4 && password == repeatPassword {
             print("Поздравлям, вы успешно зарегистрировались")
+            let alertVC = UIAlertController.init(title: "Поздравляем!", message: "Вы успешно зарегистрировались. Используйте ваш логин и пароль для входа", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+            alertVC.addAction(alertAction)
+            present(alertVC, animated: true, completion: nil)
             
         } else if login.count < 4 || password.count < 4 {
             print("Ошибка!")
