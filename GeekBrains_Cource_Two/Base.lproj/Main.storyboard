@@ -91,8 +91,7 @@
                                                     <color key="baseBackgroundColor" red="0.1238056575" green="0.66474710049999997" blue="0.042977837989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="registationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XsZ-ay-9bJ"/>
-                                                    <segue destination="6FO-2z-cgL" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="DpE-FV-i42"/>
+                                                    <segue destination="6FO-2z-cgL" kind="presentation" identifier="toRegistrationView" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="DpE-FV-i42"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -146,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="99.107142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Registration-->
         <scene sceneID="YzL-gh-LoN">
             <objects>
-                <viewController id="6FO-2z-cgL" sceneMemberID="viewController">
+                <viewController id="6FO-2z-cgL" customClass="ViewControllerRegistration" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDD-fd-22O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +218,7 @@
                                                     <color key="baseBackgroundColor" red="0.1238056575" green="0.66474710049999997" blue="0.042977837989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="registationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ltu-sp-Q6A"/>
+                                                    <action selector="registrationButtonView2:" destination="6FO-2z-cgL" eventType="touchUpInside" id="zrA-ps-Uld"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-Cj-HPQ">
@@ -253,6 +252,12 @@
                                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="zw7-bp-kpX"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажимая &quot;Зарегистрироваться&quot;, вы принимаете пользовательское соглашение и политику конфидициальности" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vNL-bq-dG0">
+                                                <rect key="frame" x="76" y="285" width="262" height="120"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -263,11 +268,15 @@
                                             <constraint firstItem="K32-XS-GFO" firstAttribute="top" secondItem="d1S-dU-pOF" secondAttribute="bottom" constant="10" id="Pwc-ek-eGU"/>
                                             <constraint firstAttribute="trailing" secondItem="0yM-O1-T3W" secondAttribute="trailing" constant="76" id="bTn-h5-7nO"/>
                                             <constraint firstItem="d1S-dU-pOF" firstAttribute="leading" secondItem="rWH-vh-fSm" secondAttribute="leading" constant="76" id="dnJ-ie-2GD"/>
+                                            <constraint firstAttribute="bottom" secondItem="vNL-bq-dG0" secondAttribute="bottom" constant="145" id="fR5-L1-3nO"/>
+                                            <constraint firstAttribute="trailing" secondItem="vNL-bq-dG0" secondAttribute="trailing" constant="76" id="gqO-es-tGs"/>
+                                            <constraint firstItem="vNL-bq-dG0" firstAttribute="leading" secondItem="rWH-vh-fSm" secondAttribute="leading" constant="76" id="hH7-8k-wie"/>
                                             <constraint firstAttribute="bottom" secondItem="0yM-O1-T3W" secondAttribute="bottom" constant="235" id="hwT-J0-d1q"/>
                                             <constraint firstAttribute="trailing" secondItem="d1S-dU-pOF" secondAttribute="trailing" constant="76" id="m86-B5-ErC"/>
                                             <constraint firstItem="xfL-Cj-HPQ" firstAttribute="top" secondItem="K32-XS-GFO" secondAttribute="bottom" constant="8" id="neA-4K-mhG"/>
                                             <constraint firstItem="0yM-O1-T3W" firstAttribute="leading" secondItem="rWH-vh-fSm" secondAttribute="leading" constant="76" id="o30-BY-Peh"/>
                                             <constraint firstAttribute="height" constant="550" id="x16-gI-Lg7"/>
+                                            <constraint firstItem="vNL-bq-dG0" firstAttribute="top" secondItem="0yM-O1-T3W" secondAttribute="bottom" constant="-30" id="xTj-W7-K4H"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -294,10 +303,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I0p-5H-aBC"/>
+                    <connections>
+                        <outlet property="loginTextFieldView2" destination="sZd-aO-9N2" id="gJU-DY-XfI"/>
+                        <outlet property="passwordTextFieldView2" destination="UIJ-7a-PMI" id="b3D-1I-3IW"/>
+                        <outlet property="repeatPasswordView2" destination="szs-Q0-qdl" id="aSJ-eT-fMy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2G-1j-uQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096.875" y="97.5"/>
+            <point key="canvasLocation" x="1095.6521739130435" y="97.098214285714278"/>
         </scene>
     </scenes>
     <resources>

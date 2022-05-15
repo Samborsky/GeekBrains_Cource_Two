@@ -56,11 +56,5 @@ class ViewController: UIViewController {
     }
 //MARK: - Кнопка Зарегистрироваться
 
-    @IBAction func registationButton(_ sender: UIButton) {
-
-print("вы перешли на страницу регистрации")
-
-    }
-
 
 }
