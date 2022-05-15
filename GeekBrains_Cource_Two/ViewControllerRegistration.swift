@@ -27,10 +27,6 @@ class ViewControllerRegistration: UIViewController {
 
 
 
-    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
-    }
-
-
 
     @IBAction func registrationButtonView2(_ sender: Any) {
         guard let loginView2 = loginTextFieldView2.text,
@@ -39,14 +35,15 @@ class ViewControllerRegistration: UIViewController {
 
         if loginView2.count >= 4 && password.count >= 4 && password == repeatPassword {
             print("Поздравляем, вы успешно зарегистрировались")
-
+//всплывающий алерт
             let alertVC = UIAlertController.init(title: "Поздравляем!", message: "Вы успешно зарегистрировались. Используйте ваш логин и пароль для входа", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
             alertVC.addAction(alertAction)
             present(alertVC, animated: true, completion: nil)
+
         } else if loginView2.count < 4 || password.count < 4 {
             print("Ошибка!")
-
+//всплывающий алерт
             let alertVC =  UIAlertController.init(title: "Ошибка!", message: "Логин и пароль должны быть, как минимум 4 символа", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Повторить", style: .default, handler: nil)
             alertVC.addAction(okAction)
@@ -54,6 +51,7 @@ class ViewControllerRegistration: UIViewController {
 
         } else if password != repeatPassword {
             print("пароли не совпадают!")
+//всплывающий алерт
             let alertVC =  UIAlertController.init(title: "Ошибка!", message: "Пароли должны совпадать", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Повторить", style: .default, handler: nil)
             alertVC.addAction(okAction)

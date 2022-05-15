@@ -55,8 +55,5 @@ class ViewController: UIViewController {
     }
 //MARK: - Кнопка Зарегистрироваться
 
-    @IBAction func RegistrationButton(_ sender: Any) {
-        performSegue(withIdentifier: "toLoginView", sender: nil)
-    }
 
 }
