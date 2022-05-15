@@ -91,7 +91,7 @@
                                                     <color key="baseBackgroundColor" red="0.1238056575" green="0.66474710049999997" blue="0.042977837989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="6FO-2z-cgL" kind="presentation" identifier="toRegistrationView" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="DpE-FV-i42"/>
+                                                    <segue destination="6FO-2z-cgL" kind="presentation" identifier="toRegistrationView" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="DpE-FV-i42"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -243,17 +243,8 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgg-al-rxp">
-                                                <rect key="frame" x="174" y="424" width="67" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="zw7-bp-kpX"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажимая &quot;Зарегистрироваться&quot;, вы принимаете пользовательское соглашение и политику конфидициальности" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="vNL-bq-dG0">
-                                                <rect key="frame" x="76" y="285" width="262" height="120"/>
+                                                <rect key="frame" x="76" y="320" width="262" height="85"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -276,7 +267,7 @@
                                             <constraint firstItem="xfL-Cj-HPQ" firstAttribute="top" secondItem="K32-XS-GFO" secondAttribute="bottom" constant="8" id="neA-4K-mhG"/>
                                             <constraint firstItem="0yM-O1-T3W" firstAttribute="leading" secondItem="rWH-vh-fSm" secondAttribute="leading" constant="76" id="o30-BY-Peh"/>
                                             <constraint firstAttribute="height" constant="550" id="x16-gI-Lg7"/>
-                                            <constraint firstItem="vNL-bq-dG0" firstAttribute="top" secondItem="0yM-O1-T3W" secondAttribute="bottom" constant="-30" id="xTj-W7-K4H"/>
+                                            <constraint firstItem="vNL-bq-dG0" firstAttribute="top" secondItem="0yM-O1-T3W" secondAttribute="bottom" constant="5" id="xTj-W7-K4H"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -311,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2G-1j-uQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095.6521739130435" y="97.098214285714278"/>
+            <point key="canvasLocation" x="132" y="772"/>
         </scene>
     </scenes>
     <resources>

@@ -26,18 +26,31 @@ class ViewControllerRegistration: UIViewController {
     }
 
 
-    @IBAction func registrationButtonView2(_ sender: UIButton) {
+
+//    @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue) {
+//    }
+
+
+
+    @IBAction func registrationButtonView2(_ sender: Any) {
         guard let login = loginTextFieldView2.text,
         let password = passwordTextFieldView2.text,
         let repeatPassword = repeatPasswordView2.text else { return }
 
         if login.count >= 4 && password.count >= 4 && password == repeatPassword {
             print("Поздравлям, вы успешно зарегистрировались")
+
             let alertVC = UIAlertController.init(title: "Поздравляем!", message: "Вы успешно зарегистрировались. Используйте ваш логин и пароль для входа", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
             alertVC.addAction(alertAction)
+
+
+
             present(alertVC, animated: true, completion: nil)
-            
+
+//performSegue(withIdentifier: "toLoginView", sender: nil)
+
+
         } else if login.count < 4 || password.count < 4 {
             print("Ошибка!")
 
@@ -56,9 +69,6 @@ class ViewControllerRegistration: UIViewController {
 
 
     }
-
-
-
 
 
 
