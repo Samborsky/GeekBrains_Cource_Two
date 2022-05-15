@@ -146,6 +146,21 @@
             </objects>
             <point key="canvasLocation" x="1952.1739130434785" y="99.107142857142847"/>
         </scene>
+        <!--View Controller Next View-->
+        <scene sceneID="5hP-Ge-3YC">
+            <objects>
+                <viewController id="MOY-Rd-BZ0" customClass="ViewControllerNextView" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H27-s3-ZvU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XWd-Rw-MRj"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7C-ob-hNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3184" y="99"/>
+        </scene>
         <!--View Controller Registration-->
         <scene sceneID="YzL-gh-LoN">
             <objects>
@@ -328,6 +343,9 @@
         <image name="VK_logo" width="552" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
