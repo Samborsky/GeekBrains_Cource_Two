@@ -20,9 +20,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tapGestureForHideKeyboard()
+        //MARK: - убираем клавиатуру с экрана при нажатии на экран
+        //UITapGestureRecognizer класс распознавания "тапа" по экрану. target - место где UIGestureRecognizer будет искать функцию, которая будет вызываться при тапе на экран(убираем клавиатуру), написав self или nil таргет, будет искать функцию в текущем классе. action - метод который будет вызываться, с указанием #selector(имяМетода)
+        //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+        ////указываем с какого элемента или целого view считывать информацию
+        //        self.view.addGestureRecognizer(tapRecognizer)
+        //    }
+        ////метод убирающий клавиатуру с обязательной приставка @objc
+        //    @objc func tapFunction() {
+        //        //сам метод скрывающий клавиатуру
+        //        self.view.endEditing(true)
     }
+
 //MARK: - кнопка Войти
+
     @IBAction func loginButtonPressing(_ sender: UIButton) {
 
         guard let login = loginTextField.text,

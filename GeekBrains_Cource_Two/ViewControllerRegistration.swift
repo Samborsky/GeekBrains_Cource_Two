@@ -7,6 +7,9 @@
 
 import UIKit
 
+//MARK: - расширение UIViewController
+
+
 class ViewControllerRegistration: UIViewController {
 
     @IBOutlet weak var loginTextFieldView2: UITextField!
@@ -16,17 +19,12 @@ class ViewControllerRegistration: UIViewController {
     @IBOutlet weak var repeatPasswordView2: UITextField!
 
 
-
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tapGestureForHideKeyboard()
     }
 
-
-
+///нажатие и логика кнопки "Зарегистрироваться"
 
     @IBAction func registrationButtonView2(_ sender: Any) {
         guard let loginView2 = loginTextFieldView2.text,
