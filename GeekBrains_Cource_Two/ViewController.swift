@@ -59,4 +59,7 @@ class ViewController: UIViewController {
             alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
         }
     }
+    @IBAction func registrationButtonPressing(_ sender: UIButton) {
+performSegue(withIdentifier: "toReg", sender: nil)
+}
 }
