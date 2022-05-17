@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureForHideKeyboard()
@@ -38,8 +39,8 @@ class ViewController: UIViewController {
 
         if login == "login" && password == "qwerty" {
             print("Вы вошли")
-            loginTextField.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-            passwordTextField.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+
+            performSegue(withIdentifier: "toTabBarController", sender: nil)
             //дальше логика, если поля пустые
         } else if login == "" || password == "" {
 
