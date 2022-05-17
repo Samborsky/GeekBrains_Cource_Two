@@ -15,6 +15,7 @@
 		84684EEC2826A54F00ADE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84684EEA2826A54F00ADE6AD /* LaunchScreen.storyboard */; };
 		AC4F628028311EB700EB6B62 /* ViewControllerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F627F28311EB700EB6B62 /* ViewControllerRegistration.swift */; };
 		ACAE162A283190C100293729 /* ViewControllerNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE1629283190C100293729 /* ViewControllerNextView.swift */; };
+		ACAE162F2833E45E00293729 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE162E2833E45E00293729 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		84684EED2826A54F00ADE6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC4F627F28311EB700EB6B62 /* ViewControllerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistration.swift; sourceTree = "<group>"; };
 		ACAE1629283190C100293729 /* ViewControllerNextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNextView.swift; sourceTree = "<group>"; };
+		ACAE162E2833E45E00293729 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				84684EE32826A54800ADE6AD /* ViewController.swift */,
 				AC4F627F28311EB700EB6B62 /* ViewControllerRegistration.swift */,
 				84684EE52826A54800ADE6AD /* Main.storyboard */,
+				ACAE162E2833E45E00293729 /* TableViewController.swift */,
 				ACAE1629283190C100293729 /* ViewControllerNextView.swift */,
 				84684EE82826A54F00ADE6AD /* Assets.xcassets */,
 				84684EEA2826A54F00ADE6AD /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84684EE42826A54800ADE6AD /* ViewController.swift in Sources */,
+				ACAE162F2833E45E00293729 /* TableViewController.swift in Sources */,
 				84684EE02826A54800ADE6AD /* AppDelegate.swift in Sources */,
 				ACAE162A283190C100293729 /* ViewControllerNextView.swift in Sources */,
 				AC4F628028311EB700EB6B62 /* ViewControllerRegistration.swift in Sources */,

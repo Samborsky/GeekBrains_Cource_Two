@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+//        navigationController?.navigationBar.backgroundColor = .red
     }
 //MARK: - кнопка Войти
     @IBAction func loginButtonPressing(_ sender: UIButton) {
