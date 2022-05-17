@@ -15,6 +15,8 @@
 		84684EEC2826A54F00ADE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84684EEA2826A54F00ADE6AD /* LaunchScreen.storyboard */; };
 		AC4F628028311EB700EB6B62 /* ViewControllerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F627F28311EB700EB6B62 /* ViewControllerRegistration.swift */; };
 		ACAE162D2832F9EA00293729 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE162C2832F9E900293729 /* Extensions.swift */; };
+		ACAE16312833FB3F00293729 /* TableViewControllerFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE16302833FB3F00293729 /* TableViewControllerFriends.swift */; };
+		ACAE16332833FF2200293729 /* TableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE16322833FF2100293729 /* TableViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		84684EED2826A54F00ADE6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC4F627F28311EB700EB6B62 /* ViewControllerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRegistration.swift; sourceTree = "<group>"; };
 		ACAE162C2832F9E900293729 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ACAE16302833FB3F00293729 /* TableViewControllerFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerFriends.swift; sourceTree = "<group>"; };
+		ACAE16322833FF2100293729 /* TableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				AC4F627F28311EB700EB6B62 /* ViewControllerRegistration.swift */,
 				ACAE162B2832F9AC00293729 /* Extensions */,
 				84684EE52826A54800ADE6AD /* Main.storyboard */,
+				ACAE16322833FF2100293729 /* TableViewController2.swift */,
+				ACAE16302833FB3F00293729 /* TableViewControllerFriends.swift */,
 				84684EE82826A54F00ADE6AD /* Assets.xcassets */,
 				84684EEA2826A54F00ADE6AD /* LaunchScreen.storyboard */,
 				84684EED2826A54F00ADE6AD /* Info.plist */,
@@ -153,7 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACAE162D2832F9EA00293729 /* Extensions.swift in Sources */,
+				ACAE16312833FB3F00293729 /* TableViewControllerFriends.swift in Sources */,
 				84684EE42826A54800ADE6AD /* ViewController.swift in Sources */,
+				ACAE16332833FF2200293729 /* TableViewController2.swift in Sources */,
 				84684EE02826A54800ADE6AD /* AppDelegate.swift in Sources */,
 				AC4F628028311EB700EB6B62 /* ViewControllerRegistration.swift in Sources */,
 				84684EE22826A54800ADE6AD /* SceneDelegate.swift in Sources */,
