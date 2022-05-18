@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
 
     @IBOutlet weak var passwordTextField: UITextField!
@@ -34,30 +34,30 @@ class ViewController: UIViewController {
 
     @IBAction func loginButtonPressing(_ sender: UIButton) {
 
-        guard let login = loginTextField.text,
-              let password = passwordTextField.text else { return }
-
-        if login == "login" && password == "qwerty" {
-            print("Вы вошли")
-
+//        guard let login = loginTextField.text,
+//              let password = passwordTextField.text else { return }
+//
+//        if login == "login" && password == "qwerty" {
+//            print("Вы вошли")
+//
             performSegue(withIdentifier: "toTabBarController", sender: nil)
-            //дальше логика, если поля пустые
-        } else if login == "" || password == "" {
-
-            //создаем алерт если поля не заполнены
-            let alertVC =  UIAlertController.init(title: "Ошибка!", message: "Вы не ввели логин или пароль", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertVC.addAction(okAction)
-            present(alertVC, animated: true, completion: nil)
-        }
-        else {
-            print("Неверные данные")
-
-            //создаем алерт, если ошибка в логине/пароле
-            loginTextField.backgroundColor = UIColor.red
-            passwordTextField.backgroundColor = UIColor.red
-            alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
-        }
+//            //дальше логика, если поля пустые
+//        } else if login == "" || password == "" {
+//
+//            //создаем алерт если поля не заполнены
+//            let alertVC =  UIAlertController.init(title: "Ошибка!", message: "Вы не ввели логин или пароль", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertVC.addAction(okAction)
+//            present(alertVC, animated: true, completion: nil)
+//        }
+//        else {
+//            print("Неверные данные")
+//
+//            //создаем алерт, если ошибка в логине/пароле
+//            loginTextField.backgroundColor = UIColor.red
+//            passwordTextField.backgroundColor = UIColor.red
+//            alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
+//        }
     }
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
 performSegue(withIdentifier: "toReg", sender: nil)

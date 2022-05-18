@@ -10,7 +10,7 @@ import UIKit
 //MARK: - расширение UIViewController
 
 
-class ViewControllerRegistration: UIViewController {
+class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var loginTextFieldView2: UITextField!
 
@@ -49,3 +49,5 @@ class ViewControllerRegistration: UIViewController {
         }
     }
 }
+
+
