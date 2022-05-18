@@ -171,6 +171,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мои друзья" id="GwT-qu-VVu"/>
+                    <connections>
+                        <outlet property="myFriendsTableView" destination="FFc-EQ-Lf1" id="T0g-DR-4sf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ti-0Q-VdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

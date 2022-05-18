@@ -26,22 +26,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-Bi-ttk">
-                        <rect key="frame" x="78" y="28" width="82" height="18"/>
+                        <rect key="frame" x="78" y="26" width="27" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="o0V-Bi-ttk" firstAttribute="leading" secondItem="iqj-wj-JGT" secondAttribute="trailing" constant="8" symbolic="YES" id="1ae-qE-2E5"/>
                     <constraint firstAttribute="trailing" secondItem="Te4-5N-iHW" secondAttribute="trailing" constant="8" id="BTN-XL-gxw"/>
-                    <constraint firstAttribute="trailing" secondItem="o0V-Bi-ttk" secondAttribute="trailing" constant="160" id="NvY-V2-Q4M"/>
+                    <constraint firstItem="o0V-Bi-ttk" firstAttribute="top" secondItem="Te4-5N-iHW" secondAttribute="bottom" constant="1.5" id="NiA-Uj-qgZ"/>
                     <constraint firstItem="Te4-5N-iHW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Odl-Vg-uyu"/>
                     <constraint firstItem="iqj-wj-JGT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="VGM-MD-vy7"/>
                     <constraint firstItem="iqj-wj-JGT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="YMJ-yr-j1C"/>
                     <constraint firstItem="Te4-5N-iHW" firstAttribute="leading" secondItem="iqj-wj-JGT" secondAttribute="trailing" constant="8" id="ce2-8j-eow"/>
                     <constraint firstItem="iqj-wj-JGT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ddF-pQ-yjg"/>
-                    <constraint firstAttribute="bottom" secondItem="o0V-Bi-ttk" secondAttribute="bottom" constant="20" id="h1i-xX-txT"/>
-                    <constraint firstItem="o0V-Bi-ttk" firstAttribute="leading" secondItem="iqj-wj-JGT" secondAttribute="trailing" constant="8" id="hpV-7R-foa"/>
                     <constraint firstItem="iqj-wj-JGT" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="1:1" id="kHe-oP-NK0"/>
                 </constraints>
             </tableViewCellContentView>
