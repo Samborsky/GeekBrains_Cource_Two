@@ -11,10 +11,9 @@ import UIKit
 class FriendsViewController: UIViewController {
 
     @IBOutlet weak var myFriendsTableView: UITableView!
-    
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
-    var friendsArray = [Friend]()
+    var friendsArray: [Friend] = []
 
 ///добавление друзей в массив
     func fillFriendsArray() {
@@ -49,8 +48,6 @@ class FriendsViewController: UIViewController {
 
 }
 
-
-
 extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendsArray.count
@@ -63,5 +60,5 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-
 }
+

@@ -140,7 +140,7 @@
                         <outlet property="loginButton" destination="1ga-eZ-ea4" id="5js-go-txZ"/>
                         <outlet property="loginTextField" destination="BRh-CQ-f1U" id="Zii-2v-Yqa"/>
                         <outlet property="passwordTextField" destination="fJb-Lg-L0x" id="hPQ-gg-LWQ"/>
-                        <segue destination="adI-7r-S8Q" kind="presentation" identifier="toTabBarController" modalPresentationStyle="fullScreen" id="oWh-z7-gnq"/>
+                        <segue destination="adI-7r-S8Q" kind="presentation" identifier="toTabBarController" animates="NO" modalPresentationStyle="fullScreen" id="oWh-z7-gnq"/>
                         <segue destination="6FO-2z-cgL" kind="show" identifier="toReg" animates="NO" id="YCV-MW-4Ba"/>
                     </connections>
                 </viewController>
