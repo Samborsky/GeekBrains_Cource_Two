@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct Group {
+struct Groups {
     var title: String
-    var avatar: UIImage
+    var avatar: UIImage?
     var description: String
 }

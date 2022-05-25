@@ -31,7 +31,7 @@ class CustomTableViewCell: UITableViewCell {
         ageLabel.text = friend.age
     }
 
-    func configure(group: Group) {
+    func configure(group: Groups) {
         avatarImageView.image = group.avatar
         nameLabel.text = group.title
         ageLabel.text = group.description

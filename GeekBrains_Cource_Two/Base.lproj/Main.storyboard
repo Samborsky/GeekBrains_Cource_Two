@@ -140,8 +140,8 @@
                         <outlet property="loginButton" destination="1ga-eZ-ea4" id="5js-go-txZ"/>
                         <outlet property="loginTextField" destination="BRh-CQ-f1U" id="Zii-2v-Yqa"/>
                         <outlet property="passwordTextField" destination="fJb-Lg-L0x" id="hPQ-gg-LWQ"/>
-                        <segue destination="adI-7r-S8Q" kind="presentation" identifier="toTabBarController" animates="NO" modalPresentationStyle="fullScreen" id="oWh-z7-gnq"/>
-                        <segue destination="6FO-2z-cgL" kind="show" identifier="toReg" animates="NO" id="YCV-MW-4Ba"/>
+                        <segue destination="adI-7r-S8Q" kind="presentation" identifier="toTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="oWh-z7-gnq"/>
+                        <segue destination="6FO-2z-cgL" kind="show" identifier="toReg" id="YCV-MW-4Ba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -162,7 +162,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qys-Qq-hVF"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qys-Qq-hVF" firstAttribute="bottom" secondItem="FFc-EQ-Lf1" secondAttribute="bottom" id="b28-2v-DuJ"/>
                             <constraint firstItem="Qys-Qq-hVF" firstAttribute="trailing" secondItem="FFc-EQ-Lf1" secondAttribute="trailing" id="ct1-H6-K3d"/>
@@ -170,7 +170,13 @@
                             <constraint firstItem="FFc-EQ-Lf1" firstAttribute="top" secondItem="Qys-Qq-hVF" secondAttribute="top" id="wdZ-se-uqS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Мои друзья" id="GwT-qu-VVu"/>
+                    <navigationItem key="navigationItem" title="Мои друзья" id="GwT-qu-VVu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wjo-wQ-0Rm">
+                            <connections>
+                                <segue destination="nXW-XU-k49" kind="show" id="jdc-cn-Sxu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myFriendsTableView" destination="FFc-EQ-Lf1" id="T0g-DR-4sf"/>
                     </connections>
@@ -188,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-ln-ncE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HNu-c0-2uB">
                                     <size key="itemSize" width="128" height="128"/>
@@ -209,7 +215,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WuP-0W-Ip8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="w6j-ln-ncE" firstAttribute="leading" secondItem="WuP-0W-Ip8" secondAttribute="leading" id="8Cj-Ei-S3b"/>
                             <constraint firstItem="w6j-ln-ncE" firstAttribute="top" secondItem="WuP-0W-Ip8" secondAttribute="top" id="UNU-W5-IxA"/>
@@ -223,7 +229,7 @@
             </objects>
             <point key="canvasLocation" x="6179.7101449275369" y="-521.65178571428567"/>
         </scene>
-        <!--Groups View Controller-->
+        <!--Мои Группы-->
         <scene sceneID="zXK-cf-QSH">
             <objects>
                 <viewController id="mYp-X2-L4A" customClass="GroupsViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
@@ -237,7 +243,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3V-cu-LGZ"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TNT-09-ggn" firstAttribute="leading" secondItem="g3V-cu-LGZ" secondAttribute="leading" id="5NN-5j-d1b"/>
                             <constraint firstItem="g3V-cu-LGZ" firstAttribute="trailing" secondItem="TNT-09-ggn" secondAttribute="trailing" id="UEl-AK-o6t"/>
@@ -245,7 +251,10 @@
                             <constraint firstItem="g3V-cu-LGZ" firstAttribute="bottom" secondItem="TNT-09-ggn" secondAttribute="bottom" id="xFE-4Y-vBZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0zL-M7-mgJ"/>
+                    <navigationItem key="navigationItem" title="Мои Группы" id="0zL-M7-mgJ"/>
+                    <connections>
+                        <outlet property="myGroupsTableView" destination="TNT-09-ggn" id="9al-ko-WQ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8F-n6-B4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -524,11 +533,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
