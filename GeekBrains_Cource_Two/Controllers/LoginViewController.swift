@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     //MARK: - кнопка Войти
 
     @IBAction func loginButtonPressing(_ sender: UIButton) {
+        print("нажатие на кнопку Логин")
 
 //        guard let login = loginTextField.text,
 //              let password = passwordTextField.text else { return }
@@ -60,6 +61,7 @@ class LoginViewController: UIViewController {
 //        }
     }
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
+        print("нажатие на кнопку Регистрация")
 performSegue(withIdentifier: "toReg", sender: nil)
 }
 }

@@ -38,7 +38,7 @@ class RegistrationViewController: UIViewController {
             present(alertVC, animated: true, completion: nil)
 
         } else if loginView2.count < 4 || password.count < 4 {
-            print("Ошибка!")
+            print("Ошибка в момент регистрации")
             //всплывающий алерт
             alertErrorMessage(message: "Логин и пароль должны быть, как минимум 4 символа")
 

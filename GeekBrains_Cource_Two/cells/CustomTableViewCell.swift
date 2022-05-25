@@ -17,13 +17,14 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var ageLabel: UILabel!
 
 
-
+///метод позволяет переиспользовать ячейку, как нам нужно. можно очищать данные ячейки при переиспользовании
     override func prepareForReuse() {
+        super.prepareForReuse()
         avatarImageView.image = nil
         nameLabel.text = nil
         ageLabel.text = nil
     }
-
+///метод который конфигурирует, что отображать в ячейке
     func configure(friend: Friend) {
         avatarImageView.image = friend.avatar
         nameLabel.text = friend.name

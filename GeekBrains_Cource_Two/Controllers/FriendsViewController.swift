@@ -14,7 +14,7 @@ class FriendsViewController: UIViewController {
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     var friendsArray: [Friend] = []
-
+//MARK: - метод добавления пользователей в массив
 ///добавление друзей в массив
     func fillFriendsArray() {
         let friend1 = Friend(name: "Hulk", age: "40 лет", avatar: UIImage(named: "friend1"), photos: [UIImage(named: "friend1")!])
@@ -31,15 +31,15 @@ class FriendsViewController: UIViewController {
         friendsArray.append(friend5)
         friendsArray.append(friend6)
         friendsArray.append(friend7)
-
-
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         fillFriendsArray()
+        //регистрируем нашу ячейку в таблице. nibName это название нашего xib файла, просто его копируем. forCellReuseIdentifier это строковый идентификатор ячейки, для определения нужно типа ячейки в TableView. Его лучше указать через константу, чтобы не было ошибок в дальнейшем
         myFriendsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
+
         myFriendsTableView.delegate = self
+        //дальше мы говорим TableView какие ячейки отображать, для этого используем метод dataSource(), в него мы передаем класс, который будет отвечать за заполнение TableView, в нашем случае self(FriendsViewController)
         myFriendsTableView.dataSource = self
 
         // Do any additional setup after loading the view.
@@ -47,18 +47,3 @@ class FriendsViewController: UIViewController {
 
 
 }
-
-extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendsArray.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as?
-                CustomTableViewCell else { return UITableViewCell()}
-        cell.configure(friend: friendsArray[indexPath.row])
-        return cell
-    }
-
-}
-
