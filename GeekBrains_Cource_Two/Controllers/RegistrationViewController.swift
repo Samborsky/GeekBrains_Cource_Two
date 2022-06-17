@@ -9,6 +9,8 @@ import UIKit
 
 //MARK: - расширение UIViewController
 
+var loginArray = [String?]()
+var passwordArray = [String?]()
 
 class RegistrationViewController: UIViewController {
 
@@ -23,7 +25,6 @@ class RegistrationViewController: UIViewController {
         tapGestureForHideKeyboard()
     }
     ///нажатие и логика кнопки "Зарегистрироваться"
-
     @IBAction func registrationButtonView2(_ sender: Any) {
         guard let loginView2 = loginTextFieldView2.text,
               let password = passwordTextFieldView2.text,
@@ -31,6 +32,11 @@ class RegistrationViewController: UIViewController {
 
         if loginView2.count >= 4 && password.count >= 4 && password == repeatPassword {
             print("Поздравляем, вы успешно зарегистрировались")
+
+//заполняем массивы с логином и паролем
+            loginArray.append(loginView2)
+            passwordArray.append(password)
+
             //всплывающий алерт
             let alertVC = UIAlertController.init(title: "Поздравляем!", message: "Вы успешно зарегистрировались. Используйте ваш логин и пароль для входа", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "ОК", style: .default, handler: nil)

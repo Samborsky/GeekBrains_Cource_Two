@@ -12,23 +12,22 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
 
-    @IBOutlet weak var loginButton: UIButton!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureForHideKeyboard()
     }
-        //MARK: - убираем клавиатуру с экрана при нажатии на экран
-        //UITapGestureRecognizer класс распознавания "тапа" по экрану. target - место где UIGestureRecognizer будет искать функцию, которая будет вызываться при тапе на экран(убираем клавиатуру), написав self или nil таргет, будет искать функцию в текущем классе. action - метод который будет вызываться, с указанием #selector(имяМетода)
-        //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
-        ////указываем с какого элемента или целого view считывать информацию
-        //        self.view.addGestureRecognizer(tapRecognizer)
-        //    }
-        ////метод убирающий клавиатуру с обязательной приставка @objc
-        //    @objc func tapFunction() {
-        //        //сам метод скрывающий клавиатуру
-        //        self.view.endEditing(true)
+    //MARK: - убираем клавиатуру с экрана при нажатии на экран
+    //UITapGestureRecognizer класс распознавания "тапа" по экрану. target - место где UIGestureRecognizer будет искать функцию, которая будет вызываться при тапе на экран(убираем клавиатуру), написав self или nil таргет, будет искать функцию в текущем классе. action - метод который будет вызываться, с указанием #selector(имяМетода)
+    //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+    ////указываем с какого элемента или целого view считывать информацию
+    //        self.view.addGestureRecognizer(tapRecognizer)
+    //    }
+    ////метод убирающий клавиатуру с обязательной приставка @objc
+    //    @objc func tapFunction() {
+    //        //сам метод скрывающий клавиатуру
+    //        self.view.endEditing(true)
 
     //MARK: - кнопка Войти
 
@@ -38,7 +37,7 @@ class LoginViewController: UIViewController {
         guard let login = loginTextField.text,
               let password = passwordTextField.text else { return }
 
-        if login == "login" && password == "qwerty" {
+        if (login == "login" && password == "qwerty") || (login == loginArray.first && password == passwordArray.first) {
             print("Вы вошли")
 
             performSegue(withIdentifier: "toTabBarController", sender: nil)
@@ -57,11 +56,20 @@ class LoginViewController: UIViewController {
             //создаем алерт, если ошибка в логине/пароле
             loginTextField.backgroundColor = UIColor.red
             passwordTextField.backgroundColor = UIColor.red
+
+            ///метод позволяющий выполнять код внутри замыкания с задержкой
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+                self.loginTextField.backgroundColor = UIColor.white
+                self.passwordTextField.backgroundColor = UIColor.white
+            }
+
             alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
         }
     }
+
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
         print("нажатие на кнопку Регистрация")
-performSegue(withIdentifier: "toReg", sender: nil)
+        performSegue(withIdentifier: "toReg", sender: nil)
+    }
 }
-}
+

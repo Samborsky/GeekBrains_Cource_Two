@@ -16,7 +16,7 @@ class GalleryViewController: UIViewController {
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
 
-    var photos = [UIImage(named: "friend1")!, UIImage(named: "friend2")!]
+    var photos = [UIImage(named: "friend1")!, UIImage(named: "friend2")!, UIImage(named: "friend3")!]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,9 @@ class GalleryViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierCustom)
+
+
+
     }
 
 

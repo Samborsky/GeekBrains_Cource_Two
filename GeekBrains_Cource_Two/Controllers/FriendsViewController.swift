@@ -14,9 +14,11 @@ class FriendsViewController: UIViewController {
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendsToGallerySeague = "fromFriendsToGallery"
-
+    ///высота ячейки
+    let cellHight = CGFloat(150)
 
     var friendsArray: [Friend] = []
+
     //MARK: - метод добавления пользователей в массив
     ///добавление друзей в массив
     func fillFriendsArray() {
@@ -35,13 +37,16 @@ class FriendsViewController: UIViewController {
         friendsArray.append(friend6)
         friendsArray.append(friend7)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fillFriendsArray()
-        //регистрируем нашу ячейку в таблице. nibName это название нашего xib файла, просто его копируем. forCellReuseIdentifier это строковый идентификатор ячейки, для определения нужно типа ячейки в TableView. Его лучше указать через константу, чтобы не было ошибок в дальнейшем
+        //регистрируем нашу ячейку в таблице. nibName это название нашего xib файла, просто его копируем. forCellReuseIdentifier это строковый идентификатор ячейки, для определения нужно типа ячейки в TableView(чтобы ячейка была именно та, которую мы создали в xib). Его лучше указать через константу, чтобы не было ошибок в дальнейшем
         myFriendsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
 
+        
         myFriendsTableView.delegate = self
+
         //дальше мы говорим TableView какие ячейки отображать, для этого используем метод dataSource(), в него мы передаем класс, который будет отвечать за заполнение TableView, в нашем случае self(FriendsViewController)
         myFriendsTableView.dataSource = self
     }
@@ -62,12 +67,20 @@ class FriendsViewController: UIViewController {
 //MARK: - расширения для таблицы UITableView вкладка Друзья
 
 extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
+
     ///метод позволяющий менять размер изображения в ячейке(высоту ячейки)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        //написал условия для теста. чтобы каждая вторая ячейка была другово размера
+        if indexPath.row % 2 == 0 {
+            return 200
+        } else {
+            return cellHight
+        }
+
+//        return cellHight
     }
 
-    ///метод количества секций в таблице
+    ///метод количества секций в таблице, по умолчанию == 1, если секций не больше 1, можно его не писать
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -95,5 +108,6 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         ///переход на GalleryViewController при нажатии на ячейку в таблице
         performSegue(withIdentifier: fromFriendsToGallerySeague, sender: friendsArray[indexPath.row])
     }
+
 
 }

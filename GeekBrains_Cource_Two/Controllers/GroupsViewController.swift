@@ -14,6 +14,7 @@ class GroupsViewController: UIViewController {
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     var groupsArray: [Groups] = []
+    let FromGroupsToMygroups = "FromGroupsToMygroups"
 
     func fillGroupArray() {
         let group1 = Groups(title: "ТВ передачи", avatar: UIImage(named: "group2"), description: "расписание телепередач на каждый день")
@@ -43,6 +44,9 @@ class GroupsViewController: UIViewController {
         myGroupsTableView.dataSource = self
 
     }
+
+
+  
 
 
 }
@@ -75,6 +79,11 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.ageLabel.text = groupsArray[indexPath.row].description
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: FromGroupsToMygroups, sender: groupsArray[indexPath.row])
+    }
+
     //метод обрабатывающий нажатие на ячейку. можно вывести в консоль куда именно нажал человек
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             print("нажата строка \(indexPath.row) в секции \(indexPath.section). Вкладка Группы")
