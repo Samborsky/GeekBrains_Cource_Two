@@ -12,8 +12,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureForHideKeyboard()
@@ -37,9 +35,14 @@ class LoginViewController: UIViewController {
         guard let login = loginTextField.text,
               let password = passwordTextField.text else { return }
 
-        if (login == "login" && password == "qwerty") || (login == loginArray.first && password == passwordArray.first) {
-            print("Вы вошли")
+//        if (login == "login" && password == "qwerty") || (login == loginArray.first && password == passwordArray.first) {
+//            print("Вы вошли")
 
+        if (login == "login" && password == "qwerty") || (login == loginArray.first(where: {$0 == login}) && password == passwordArray.first(where: {$0 == password})) {
+
+
+            print("Вы вошли")
+            print("мы на экране FriendsViewController")
             performSegue(withIdentifier: "toTabBarController", sender: nil)
             //дальше логика, если поля пустые
         } else if login == "" || password == "" {
@@ -69,7 +72,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
         print("нажатие на кнопку Регистрация")
+        print("мы на экране RegistrationViewController")
         performSegue(withIdentifier: "toReg", sender: nil)
     }
 }
-

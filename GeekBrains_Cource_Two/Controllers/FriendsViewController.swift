@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class FriendsViewController: UIViewController {
 
     @IBOutlet weak var myFriendsTableView: UITableView!
@@ -38,30 +37,35 @@ class FriendsViewController: UIViewController {
         friendsArray.append(friend7)
     }
 
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myFriendsTableView.reloadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fillFriendsArray()
         //регистрируем нашу ячейку в таблице. nibName это название нашего xib файла, просто его копируем. forCellReuseIdentifier это строковый идентификатор ячейки, для определения нужно типа ячейки в TableView(чтобы ячейка была именно та, которую мы создали в xib). Его лучше указать через константу, чтобы не было ошибок в дальнейшем
         myFriendsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
 
-        
         myFriendsTableView.delegate = self
 
         //дальше мы говорим TableView какие ячейки отображать, для этого используем метод dataSource(), в него мы передаем класс, который будет отвечать за заполнение TableView, в нашем случае self(FriendsViewController)
         myFriendsTableView.dataSource = self
     }
 
-
     ///передаем
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == fromFriendsToGallerySeague,
 //           let sourceVC = segue.source as? FriendsViewController,
            let destinationVC = segue.destination as? GalleryViewController,
-           let friends = sender as? Friend {
+           let friends = sender as? Friend,
+           let indexPath = myFriendsTableView.indexPathForSelectedRow {
+            destinationVC.title = friendsArray[indexPath.row].name
             destinationVC.photos = friends.photos
         }
     }
-
 
 }
 //MARK: - расширения для таблицы UITableView вкладка Друзья
@@ -71,13 +75,7 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     ///метод позволяющий менять размер изображения в ячейке(высоту ячейки)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //написал условия для теста. чтобы каждая вторая ячейка была другово размера
-        if indexPath.row % 2 == 0 {
-            return 200
-        } else {
             return cellHight
-        }
-
-//        return cellHight
     }
 
     ///метод количества секций в таблице, по умолчанию == 1, если секций не больше 1, можно его не писать
@@ -93,9 +91,10 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     ///метод позволяющий заполнять ячейки таблицы
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //приводим нашу ячейку к типу xib файла(UITableViewCell)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as?
-                CustomTableViewCell else { return UITableViewCell()}
-                cell.configure(friend: friendsArray[indexPath.row]) // эта строка позволяет добавить все // компоненты массива сразу (name, age, avatar) или можно как ниже, каждый добавить отдельно
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
+                cell.configure(friend: friendsArray[indexPath.row])
+        // эта строка позволяет добавить все компоненты массива сразу (name, age, avatar) или можно как ниже, каждый добавить отдельно
+
 //        cell.nameLabel.text = friendsArray[indexPath.row].name
 //        cell.avatarImageView.image = friendsArray[indexPath.row].avatar
 //        cell.ageLabel.text = friendsArray[indexPath.row].age
@@ -104,9 +103,38 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     //метод обрабатывающий нажатие на ячейку. можно вывести в консоль куда именно нажал человек
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("нажата строка \(indexPath.row) в секции \(indexPath.section). Вкладка друзья")
+        print(friendsArray[indexPath.row].name)
 
         ///переход на GalleryViewController при нажатии на ячейку в таблице
         performSegue(withIdentifier: fromFriendsToGallerySeague, sender: friendsArray[indexPath.row])
+    }
+
+
+///метод позволяющий удалять строку при свайпе справа
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _,_,_ in self.friendsArray.remove(at: indexPath.row)
+            tableView.reloadData()
+            // код выше - замыкание, определяет какие действия будут выполнены при активации действия
+        }
+
+        //здесь в замыкание мы передаем вызов алерт контроллера и метод изменения имени
+        let actionEdit = UIContextualAction(style: .normal, title: "Изменить") { _,_,_ in
+            let alertVC = UIAlertController(title: "Введите новое имя", message: nil, preferredStyle: .alert)
+
+                    alertVC.addTextField(configurationHandler: {textField in textField.placeholder = "Имя"})
+//передаем изменения в массив через замыкание
+            let alertChange = UIAlertAction(title: "Изменить", style: .default) { _ in
+                self.friendsArray[indexPath.row].name = alertVC.textFields?[0].text ?? ""
+                tableView.reloadData()
+            }
+            let alertCancel = UIAlertAction(title: "Отменить", style: .cancel)
+                    alertVC.addAction(alertChange)
+                    alertVC.addAction(alertCancel)
+
+            self.present(alertVC, animated: true) }
+
+        let actions = UISwipeActionsConfiguration(actions: [actionDelete, actionEdit])
+        return actions
     }
 
 

@@ -11,7 +11,6 @@ class GroupsViewController: UIViewController {
 
     @IBOutlet weak var myGroupsTableView: UITableView!
 
-
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     var groupsArray: [Groups] = []
     let FromGroupsToMygroups = "FromGroupsToMygroups"
@@ -33,6 +32,10 @@ class GroupsViewController: UIViewController {
         groupsArray.append(group7)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myGroupsTableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +48,11 @@ class GroupsViewController: UIViewController {
 
     }
 
-
-  
-
-
 }
 //MARK: - расширения для таблицы UITableView вкладка Группы
 
 extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
+
 ///метод позволяющий менять размер изображения в ячейке(высоту ячейки)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
@@ -80,12 +80,10 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: FromGroupsToMygroups, sender: groupsArray[indexPath.row])
-    }
-
     //метод обрабатывающий нажатие на ячейку. можно вывести в консоль куда именно нажал человек
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: FromGroupsToMygroups, sender: groupsArray[indexPath.row])
+
             print("нажата строка \(indexPath.row) в секции \(indexPath.section). Вкладка Группы")
         }
 }

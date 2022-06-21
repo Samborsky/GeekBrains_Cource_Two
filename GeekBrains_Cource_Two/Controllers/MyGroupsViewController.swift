@@ -9,7 +9,8 @@ import UIKit
 
 class MyGroupsViewController: UIViewController {
 
-
+var myGroupsArray = [Groups]()
+    
 
 
 

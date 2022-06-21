@@ -55,5 +55,3 @@ class RegistrationViewController: UIViewController {
         }
     }
 }
-
-

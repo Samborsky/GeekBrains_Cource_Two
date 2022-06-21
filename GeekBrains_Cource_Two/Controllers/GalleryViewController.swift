@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-
-
 class GalleryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,17 +20,19 @@ class GalleryViewController: UIViewController {
 
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        
         collectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierCustom)
-
-
-
     }
-
 
 }
 
 extension GalleryViewController: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("нажатие на картинку №\(indexPath.item)")
+
+    }
 
 }
 
@@ -53,8 +52,11 @@ extension GalleryViewController: UICollectionViewDataSource {
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //устанавливаем ширину картинок
         let collectionViewWidth = collectionView.bounds.width
+        //отспуп между картинками
         let whiteSpace = CGFloat(5)
         let lineCountCell = CGFloat(2)
         let cellWidth = collectionViewWidth / lineCountCell - whiteSpace
