@@ -12,7 +12,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
-
+//этот массив можно сделать тут пустым, наполнять его будем фотками из массива friendsArray
     var photos = [UIImage(named: "friend1")!, UIImage(named: "friend2")!, UIImage(named: "friend3")!]
 
     override func viewDidLoad() {

@@ -9,7 +9,7 @@ import UIKit
 
 class GroupsViewController: UIViewController {
 
-    @IBOutlet weak var myGroupsTableView: UITableView!
+    @IBOutlet weak var groupsTableView: UITableView!
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     var groupsArray: [Groups] = []
@@ -34,17 +34,17 @@ class GroupsViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        myGroupsTableView.reloadData()
+        groupsTableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fillGroupArray()
-        myGroupsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
+        groupsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
 
-        myGroupsTableView.delegate = self
+        groupsTableView.delegate = self
         
-        myGroupsTableView.dataSource = self
+        groupsTableView.dataSource = self
 
     }
 

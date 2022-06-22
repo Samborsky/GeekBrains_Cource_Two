@@ -265,7 +265,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Группы" id="0zL-M7-mgJ"/>
                     <connections>
-                        <outlet property="myGroupsTableView" destination="TNT-09-ggn" id="FWJ-Ez-KJO"/>
+                        <outlet property="groupsTableView" destination="TNT-09-ggn" id="y0b-yU-4CT"/>
                         <segue destination="YiG-Dd-oZK" kind="unwind" identifier="FromGroupsToMygroups" unwindAction="unwindSegueToMyGroupsWithSegue:" id="QfO-eY-pvc"/>
                     </connections>
                 </viewController>
@@ -299,10 +299,13 @@
                     <navigationItem key="navigationItem" title="Мои группы" id="EkH-3R-0S8">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="UFr-A6-64t">
                             <connections>
-                                <segue destination="mYp-X2-L4A" kind="show" id="Swu-qt-ESd"/>
+                                <segue destination="mYp-X2-L4A" kind="show" identifier="toAllGroups" id="Swu-qt-ESd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myGroupsTableView" destination="ukl-ZF-vy2" id="z5W-zv-bK5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZn-oK-3XA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

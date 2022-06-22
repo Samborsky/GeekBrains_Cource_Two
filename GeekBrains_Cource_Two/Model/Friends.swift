@@ -13,3 +13,4 @@ struct Friend {
     var avatar: UIImage?
     var photos: [UIImage]
 }
+

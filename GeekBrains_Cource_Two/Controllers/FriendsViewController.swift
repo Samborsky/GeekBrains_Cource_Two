@@ -55,15 +55,16 @@ class FriendsViewController: UIViewController {
         myFriendsTableView.dataSource = self
     }
 
-    ///передаем
+//делаем переход по сеге и кастим до нужных классов - этот момент разобрать детально
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == fromFriendsToGallerySeague,
 //           let sourceVC = segue.source as? FriendsViewController,
            let destinationVC = segue.destination as? GalleryViewController,
-           let friends = sender as? Friend,
+//           let friends = sender as? Friend, - приводим к типу Friend и получаем доступ к элементам
            let indexPath = myFriendsTableView.indexPathForSelectedRow {
             destinationVC.title = friendsArray[indexPath.row].name
-            destinationVC.photos = friends.photos
+//эта строка заменяет(наполняет) массив с фотками в GalleryViewController(photos) на массив фоток из friendsArray класса FriendsViewController (у них один тип UIImage поэтому нет конфликта)
+            destinationVC.photos = friendsArray[indexPath.row].photos//можно использовать friends.photos
         }
     }
 

@@ -120,8 +120,8 @@
 				84684EE32826A54800ADE6AD /* LoginViewController.swift */,
 				AC4F627F28311EB700EB6B62 /* RegistrationViewController.swift */,
 				AC80198B2835922400135395 /* FriendsViewController.swift */,
-				AC80198D283592C800135395 /* GroupsViewController.swift */,
 				AC15829D284692DE00D662B0 /* GalleryViewController.swift */,
+				AC80198D283592C800135395 /* GroupsViewController.swift */,
 				AC15829F2847B49200D662B0 /* MyGroupsViewController.swift */,
 			);
 			path = Controllers;
