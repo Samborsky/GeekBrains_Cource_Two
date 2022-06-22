@@ -38,36 +38,37 @@ class LoginViewController: UIViewController {
 //        if (login == "login" && password == "qwerty") || (login == loginArray.first && password == passwordArray.first) {
 //            print("Вы вошли")
 
-        if (login == "login" && password == "qwerty") || (login == loginArray.first(where: {$0 == login}) && password == passwordArray.first(where: {$0 == password})) {
-
-
-            print("Вы вошли")
-            print("мы на экране FriendsViewController")
+//        if (login == "login" && password == "qwerty") || (login == loginArray.first(where: {$0 == login}) && password == passwordArray.first(where: {$0 == password})) {
+//
+//
+//            print("Вы вошли")
+//            print("мы на экране FriendsViewController")
             performSegue(withIdentifier: "toTabBarController", sender: nil)
             //дальше логика, если поля пустые
-        } else if login == "" || password == "" {
-
-            //создаем алерт если поля не заполнены
-            let alertVC =  UIAlertController.init(title: "Ошибка!", message: "Вы не ввели логин или пароль", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertVC.addAction(okAction)
-            present(alertVC, animated: true, completion: nil)
-        }
-        else {
-            print("Неверные данные")
-
-            //создаем алерт, если ошибка в логине/пароле
-            loginTextField.backgroundColor = UIColor.red
-            passwordTextField.backgroundColor = UIColor.red
-
-            ///метод позволяющий выполнять код внутри замыкания с задержкой
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-                self.loginTextField.backgroundColor = UIColor.white
-                self.passwordTextField.backgroundColor = UIColor.white
-            }
-
-            alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
-        }
+//        } else if login == "" || password == "" {
+//
+//            //создаем алерт если поля не заполнены
+//            let alertVC =  UIAlertController.init(title: "Ошибка!", message: "Вы не ввели логин или пароль", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertVC.addAction(okAction)
+//            present(alertVC, animated: true, completion: nil)
+//        }
+//        else {
+//            print("Неверные данные")
+//
+//            //создаем алерт, если ошибка в логине/пароле
+//            loginTextField.backgroundColor = UIColor.red
+//            passwordTextField.backgroundColor = UIColor.red
+//
+//            ///метод позволяющий выполнять код внутри замыкания с задержкой
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+//                self.loginTextField.backgroundColor = UIColor.white
+//                self.passwordTextField.backgroundColor = UIColor.white
+//            }
+//
+//            alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
+//        }
+//    }
     }
 
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
