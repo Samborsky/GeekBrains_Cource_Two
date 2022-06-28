@@ -61,9 +61,11 @@ extension MyGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.avatarImageView.image = myGroupsArray[indexPath.row].avatar
         cell.ageLabel.text = myGroupsArray[indexPath.row].description
         cell.nameLabel.text = myGroupsArray[indexPath.row].title
+        cell.viewForShadow.layer.shadowColor = UIColor.white.cgColor
+
         return cell
     }
-///размер картинки в таблие
+///размер картинки в таблице
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }

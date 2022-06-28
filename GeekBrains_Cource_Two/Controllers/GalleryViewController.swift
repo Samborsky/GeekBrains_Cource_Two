@@ -45,7 +45,7 @@ extension GalleryViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierCustom, for: indexPath) as? GalleryCollectionCell else { return UICollectionViewCell()}
 
         cell.configure(image: photos[indexPath.item])
-
+        
         return cell
     }
 

@@ -11,7 +11,9 @@ class CustomTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var avatarImageView: UIImageView!
-
+    
+    @IBOutlet weak var viewForShadow: UIView!
+    
     @IBOutlet weak var nameLabel: UILabel!
 
     @IBOutlet weak var ageLabel: UILabel!
@@ -39,7 +41,7 @@ class CustomTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,3 +51,4 @@ class CustomTableViewCell: UITableViewCell {
     }
     
 }
+

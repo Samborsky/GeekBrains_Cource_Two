@@ -24,7 +24,9 @@
 		AC80198928358C1200135395 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC80198728358C1200135395 /* CustomTableViewCell.xib */; };
 		AC80198C2835922400135395 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80198B2835922400135395 /* FriendsViewController.swift */; };
 		AC80198E283592C800135395 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80198D283592C800135395 /* GroupsViewController.swift */; };
+		AC95C83D286B6BF2008AB8FE /* UIViewForShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C83C286B6BF1008AB8FE /* UIViewForShadow.swift */; };
 		ACAE162D2832F9EA00293729 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE162C2832F9E900293729 /* Extensions.swift */; };
+		ACC5E577286B7D73001754F3 /* LikeControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5E576286B7D73001754F3 /* LikeControll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,9 @@
 		AC80198728358C1200135395 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		AC80198B2835922400135395 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		AC80198D283592C800135395 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		AC95C83C286B6BF1008AB8FE /* UIViewForShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewForShadow.swift; sourceTree = "<group>"; };
 		ACAE162C2832F9E900293729 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ACC5E576286B7D73001754F3 /* LikeControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +112,10 @@
 			children = (
 				AC80198628358C1200135395 /* CustomTableViewCell.swift */,
 				AC80198728358C1200135395 /* CustomTableViewCell.xib */,
+				AC95C83C286B6BF1008AB8FE /* UIViewForShadow.swift */,
 				AC158299284691A700D662B0 /* GalleryCollectionCell.swift */,
 				AC15829A284691A700D662B0 /* GalleryCollectionCell.xib */,
+				ACC5E576286B7D73001754F3 /* LikeControll.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -213,9 +219,11 @@
 				AC15829B284691A700D662B0 /* GalleryCollectionCell.swift in Sources */,
 				AC80198828358C1200135395 /* CustomTableViewCell.swift in Sources */,
 				84684EE42826A54800ADE6AD /* LoginViewController.swift in Sources */,
+				ACC5E577286B7D73001754F3 /* LikeControll.swift in Sources */,
 				AC15829E284692DE00D662B0 /* GalleryViewController.swift in Sources */,
 				AC80198E283592C800135395 /* GroupsViewController.swift in Sources */,
 				AC80198C2835922400135395 /* FriendsViewController.swift in Sources */,
+				AC95C83D286B6BF2008AB8FE /* UIViewForShadow.swift in Sources */,
 				84684EE02826A54800ADE6AD /* AppDelegate.swift in Sources */,
 				AC4F628028311EB700EB6B62 /* RegistrationViewController.swift in Sources */,
 				84684EE22826A54800ADE6AD /* SceneDelegate.swift in Sources */,

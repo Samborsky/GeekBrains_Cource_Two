@@ -20,7 +20,7 @@ class FriendsViewController: UIViewController {
     var lettersArray = [String]()
     var newFriendArray = [Friend]()
 
-    
+
 
     //MARK: - метод добавления пользователей в массив
     ///добавление друзей в массив
@@ -31,7 +31,7 @@ class FriendsViewController: UIViewController {
         let friend4 = Friend(name: "Captain America", age: "30 лет", avatar: UIImage(named: "friend4"), photos: [UIImage(named: "captain1")!])
         let friend5 = Friend(name: "Thor", age: "33 лет", avatar: UIImage(named: "friend5"), photos: [UIImage(named: "thor1")!, UIImage(named: "thor2")!])
         let friend6 = Friend(name: "Spiderman", age: "20 лет", avatar: UIImage(named: "friend6"), photos: [UIImage(named: "spider1")!, UIImage(named: "spider2")!, UIImage(named: "spider3")!])
-        let friend7 = Friend(name: "hIron Man", age: "45 лет", avatar: UIImage(named: "friend7"), photos: [UIImage(named: "ironman1")!])
+        let friend7 = Friend(name: "Iron Man", age: "45 лет", avatar: UIImage(named: "friend7"), photos: [UIImage(named: "ironman1")!])
         friendsArray.append(friend1)
         friendsArray.append(friend2)
         friendsArray.append(friend3)
@@ -63,13 +63,13 @@ class FriendsViewController: UIViewController {
     }
 ///метод который добавляет первую  букву имени в новый массив
     func firstFriendLetter(){
-//var lettersArray = [String]()
         for item in friendsArray {
             let letter = String(item.name.prefix(1)).lowercased()
             if !lettersArray.contains(letter) {
                 lettersArray.append(letter)
             }
         }
+
     }
 
     func test(sourceArray: [Friend], letter: String) -> [Friend] {
@@ -83,6 +83,17 @@ var resultArray = [Friend]()
         return resultArray
     }
 
+
+//    func test2() {
+//        for item in friendsArray {
+//            let a = String(item.name.prefix(1)).lowercased()
+//            for item2 in lettersArray {
+//                if a == item2.lowercased() {
+//                    newFriendArray.append(item)
+//                }
+//            }
+//        }
+//    }
 
 
 //делаем переход по сеге и кастим до нужных классов - этот момент разобрать детально
@@ -123,27 +134,37 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //приводим нашу ячейку к типу xib файла(UITableViewCell)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
+        //делаем аватарку круглой
+//        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.width / 2
+        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
+        cell.viewForShadow.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
+//        cell.layer.cornerRadius = bounds.height / 2
+        //конфигурируем ячейку, наполняя ее данными
         cell.configure(friend: test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row])
-        // эта строка позволяет добавить все компоненты массива сразу (name, age, avatar) или можно как ниже, каждый добавить отдельно
 
-//        cell.nameLabel.text = friendsArray[indexPath.row].name
-//        cell.avatarImageView.image = friendsArray[indexPath.row].avatar
-//        cell.ageLabel.text = friendsArray[indexPath.row].age
+
         return cell
     }
     //метод обрабатывающий нажатие на ячейку. можно вывести в консоль куда именно нажал человек
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("нажата строка \(indexPath.row) в секции \(indexPath.section). Вкладка друзья")
-        print(test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].name)
+        print(test(sourceArray: friendsArray, letter: lettersArray[indexPath.section]))
+        print(lettersArray)
+        print("________")
+        print(lettersArray[indexPath.section])
+        print(lettersArray[indexPath.row])
+        print("!!!!!")
+        print(newFriendArray)
 
         ///переход на GalleryViewController при нажатии на ячейку в таблице
-        performSegue(withIdentifier: fromFriendsToGallerySeague, sender: friendsArray[indexPath.row])
+        performSegue(withIdentifier: fromFriendsToGallerySeague, sender: nil)
     }
 
 
 ///метод позволяющий удалять строку при свайпе справа
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _,_,_ in self.friendsArray.remove(at: indexPath.row)
+            self.lettersArray.remove(at: indexPath.row)
 //            self.lettersArray.remove(at: indexPath.row)
             tableView.reloadData()
             // код выше - замыкание, определяет какие действия будут выполнены при активации действия
@@ -155,8 +176,10 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
 
                     alertVC.addTextField(configurationHandler: {textField in textField.placeholder = "Имя"})
 //передаем изменения в массив через замыкание
-            let alertChange = UIAlertAction(title: "Изменить", style: .default) { _ in
-                self.friendsArray[indexPath.row].name = alertVC.textFields?[0].text ?? ""
+            let alertChange = UIAlertAction(title: "Изменить", style: .default) { _ in self.friendsArray[indexPath.row].name = alertVC.textFields?[0].text ?? ""
+//                if self.lettersArray.isEmpty {
+                    self.lettersArray.remove(at: indexPath.row)
+//                }
                 tableView.reloadData()
             }
             let alertCancel = UIAlertAction(title: "Отменить", style: .cancel)
@@ -175,3 +198,12 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 }
+//Здравствуйте! Подскажите пожалуйста,как сформировать новый массив, сравнивая элементы двух других
+//
+//пример:
+//var array1 = [Friend(name: "Hulk"), Friend(name: "hulkRed"), Friend(name: "bug")]
+//var array2 = ["h", "B", "Z"]
+//var resultArray = [Friend]()
+//
+//нужно, чтобы сравнивались первый буквы имени в array1 и массив array2, если элементы совпадали, наполнять 3 массив
+//

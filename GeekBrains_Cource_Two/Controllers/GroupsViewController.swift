@@ -55,7 +55,7 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
 
 ///метод позволяющий менять размер изображения в ячейке(высоту ячейки)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 200
     }
 
     ///метод количества секций в таблице
@@ -77,6 +77,7 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = groupsArray[indexPath.row].title
         cell.avatarImageView.image = groupsArray[indexPath.row].avatar
         cell.ageLabel.text = groupsArray[indexPath.row].description
+        cell.viewForShadow.layer.shadowColor = UIColor.white.cgColor
         return cell
     }
 
