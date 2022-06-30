@@ -10,9 +10,6 @@ import UIKit
 class MyGroupsViewController: UIViewController {
 
 
-
-
-
     @IBOutlet weak var myGroupsTableView: UITableView!
 
 

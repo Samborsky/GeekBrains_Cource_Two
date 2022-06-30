@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable class UIViewForShadow: UIView {
+class UIViewForShadow: UIView {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var shadowView: UIView!
@@ -25,10 +25,11 @@ import UIKit
         shadowView.layer.shadowOpacity = shadowOpacity
     }
 
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        avatar.layer.cornerRadius = bounds.height / 2
-        shadowView.layer.cornerRadius = bounds.height / 2
+//        avatar.layer.cornerRadius = bounds.height / 2
+//        shadowView.layer.cornerRadius = bounds.height / 2
     }
 
 
