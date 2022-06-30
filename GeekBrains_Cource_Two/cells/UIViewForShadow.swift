@@ -7,27 +7,28 @@
 
 import UIKit
 
-class UIViewForShadow: UIView {
+@IBDesignable class UIViewForShadow: UIView {
 
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var shadowView: UIView!
 
 
-    var shadowColor = UIColor.red
-
+    @IBInspectable var shadowColor = UIColor.red
+    @IBInspectable var shadowOpacity: Float = 0.8
+    @IBInspectable var shadowRadius: CGFloat = 7
 
     override func awakeFromNib() {
         super.awakeFromNib()
         shadowView.layer.shadowColor = shadowColor.cgColor
-        shadowView.layer.shadowRadius = 7
+        shadowView.layer.shadowRadius = shadowRadius
         shadowView.layer.shadowOffset = .zero
-        shadowView.layer.shadowOpacity = 0.8
+        shadowView.layer.shadowOpacity = shadowOpacity
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-//        avatar.layer.cornerRadius = bounds.height / 2
-//        shadowView.layer.cornerRadius = bounds.height / 2
+        avatar.layer.cornerRadius = bounds.height / 2
+        shadowView.layer.cornerRadius = bounds.height / 2
     }
 
 

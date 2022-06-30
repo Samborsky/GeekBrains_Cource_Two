@@ -11,16 +11,20 @@ class GalleryCollectionCell: UICollectionViewCell {
 
 
     @IBOutlet weak var photoImageView: UIImageView!
-
+    @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var likeControl: LikeControll!
     @IBOutlet weak var container: UIView!
+
+    var likes = Array(1...550)
 
 @objc func handleTap(_: UITapGestureRecognizer) {
             likeControl.isLike.toggle()
             if likeControl.isLike {
                 likeControl.likePhoto.image = UIImage(systemName: "heart")
+                likesCount.text = ""
             } else {
                 likeControl.likePhoto.image = UIImage(systemName: "heart.fill")
+                likesCount.text = (String(likes.randomElement()! + 1))
             }
         }
 
@@ -28,6 +32,7 @@ class GalleryCollectionCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.numberOfTapsRequired = 2
         let tapOnHeart = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))

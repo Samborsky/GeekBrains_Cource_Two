@@ -25,6 +25,7 @@
 		AC80198C2835922400135395 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80198B2835922400135395 /* FriendsViewController.swift */; };
 		AC80198E283592C800135395 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80198D283592C800135395 /* GroupsViewController.swift */; };
 		AC95C83D286B6BF2008AB8FE /* UIViewForShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95C83C286B6BF1008AB8FE /* UIViewForShadow.swift */; };
+		AC9768D7286CC63F009DF5BA /* FullSizePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9768D6286CC63E009DF5BA /* FullSizePhotoViewController.swift */; };
 		ACAE162D2832F9EA00293729 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE162C2832F9E900293729 /* Extensions.swift */; };
 		ACC5E577286B7D73001754F3 /* LikeControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5E576286B7D73001754F3 /* LikeControll.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		AC80198B2835922400135395 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		AC80198D283592C800135395 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		AC95C83C286B6BF1008AB8FE /* UIViewForShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewForShadow.swift; sourceTree = "<group>"; };
+		AC9768D6286CC63E009DF5BA /* FullSizePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSizePhotoViewController.swift; sourceTree = "<group>"; };
 		ACAE162C2832F9E900293729 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACC5E576286B7D73001754F3 /* LikeControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				AC80198B2835922400135395 /* FriendsViewController.swift */,
 				AC15829D284692DE00D662B0 /* GalleryViewController.swift */,
 				AC80198D283592C800135395 /* GroupsViewController.swift */,
+				AC9768D6286CC63E009DF5BA /* FullSizePhotoViewController.swift */,
 				AC15829F2847B49200D662B0 /* MyGroupsViewController.swift */,
 			);
 			path = Controllers;
@@ -223,6 +226,7 @@
 				AC15829E284692DE00D662B0 /* GalleryViewController.swift in Sources */,
 				AC80198E283592C800135395 /* GroupsViewController.swift in Sources */,
 				AC80198C2835922400135395 /* FriendsViewController.swift in Sources */,
+				AC9768D7286CC63F009DF5BA /* FullSizePhotoViewController.swift in Sources */,
 				AC95C83D286B6BF2008AB8FE /* UIViewForShadow.swift in Sources */,
 				84684EE02826A54800ADE6AD /* AppDelegate.swift in Sources */,
 				AC4F628028311EB700EB6B62 /* RegistrationViewController.swift in Sources */,

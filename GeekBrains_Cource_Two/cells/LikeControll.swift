@@ -13,7 +13,7 @@ class LikeControll: UIControl {
 
 
 
-    var isLike = false
+    var isLike = true
 
 
 

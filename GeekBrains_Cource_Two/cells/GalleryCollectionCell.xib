@@ -43,14 +43,22 @@
                                     <outlet property="likePhoto" destination="xBx-bF-ahl" id="GAc-ZK-lTl"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-Be-42D">
+                                <rect key="frame" x="197" y="236" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UBN-Be-42D" secondAttribute="bottom" constant="6" id="Ang-qg-CZj"/>
                             <constraint firstAttribute="bottom" secondItem="T28-u2-HS1" secondAttribute="bottom" constant="6" id="E50-CG-fCD"/>
                             <constraint firstAttribute="bottom" secondItem="bet-qU-7Ra" secondAttribute="bottom" constant="40" id="keC-Yp-GFA"/>
                             <constraint firstAttribute="trailing" secondItem="T28-u2-HS1" secondAttribute="trailing" constant="10" id="msq-Bn-2JH"/>
                             <constraint firstItem="bet-qU-7Ra" firstAttribute="leading" secondItem="NpE-wh-FX5" secondAttribute="leading" constant="8" id="nF4-y6-mPQ"/>
                             <constraint firstItem="bet-qU-7Ra" firstAttribute="top" secondItem="NpE-wh-FX5" secondAttribute="top" constant="8" id="tAL-Fp-qsh"/>
+                            <constraint firstItem="T28-u2-HS1" firstAttribute="leading" secondItem="UBN-Be-42D" secondAttribute="trailing" constant="10" id="z8M-DG-8FI"/>
                             <constraint firstAttribute="trailing" secondItem="bet-qU-7Ra" secondAttribute="trailing" constant="8" id="zV9-4q-jyW"/>
                         </constraints>
                     </view>
@@ -67,6 +75,7 @@
             <connections>
                 <outlet property="container" destination="NpE-wh-FX5" id="Jgj-gI-7ly"/>
                 <outlet property="likeControl" destination="T28-u2-HS1" id="Xx2-Oo-rQA"/>
+                <outlet property="likesCount" destination="UBN-Be-42D" id="9Zk-C5-gx9"/>
                 <outlet property="photoImageView" destination="bet-qU-7Ra" id="7hC-EH-sm7"/>
             </connections>
             <point key="canvasLocation" x="142" y="118"/>

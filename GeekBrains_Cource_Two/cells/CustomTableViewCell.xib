@@ -41,6 +41,11 @@
                             <constraint firstAttribute="bottom" secondItem="BPd-JA-nfs" secondAttribute="bottom" id="xcV-o8-Lqm"/>
                             <constraint firstAttribute="trailing" secondItem="BPd-JA-nfs" secondAttribute="trailing" id="zKd-Ot-Myd"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="avatar" destination="BPd-JA-nfs" id="gnc-zC-ljS"/>
                             <outlet property="shadowView" destination="ReE-gL-OdM" id="Mba-9q-Sir"/>

@@ -40,7 +40,10 @@ class FriendsViewController: UIViewController {
         friendsArray.append(friend6)
         friendsArray.append(friend7)
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myFriendsTableView.reloadData()
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -71,7 +74,6 @@ class FriendsViewController: UIViewController {
         }
 
     }
-
     func test(sourceArray: [Friend], letter: String) -> [Friend] {
 var resultArray = [Friend]()
         for item in sourceArray {
@@ -136,8 +138,8 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
         //делаем аватарку круглой
 //        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.width / 2
-        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
-        cell.viewForShadow.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
+//        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
+//        cell.viewForShadow.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
 //        cell.layer.cornerRadius = bounds.height / 2
         //конфигурируем ячейку, наполняя ее данными
         cell.configure(friend: test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row])

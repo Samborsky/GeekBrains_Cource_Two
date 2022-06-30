@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adI-7r-S8Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pR5-F0-msN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -220,22 +220,46 @@
                     <navigationItem key="navigationItem" title="Галерея" id="xhN-6W-KJP"/>
                     <connections>
                         <outlet property="collectionView" destination="w6j-ln-ncE" id="izj-V8-XxV"/>
+                        <segue destination="vvw-Hi-Gmx" kind="show" identifier="toFullSizePhoto" id="NO4-XJ-BK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hc-OV-LPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6184" y="-534"/>
         </scene>
-        <!--View Controller-->
+        <!--Full Size Photo View Controller-->
         <scene sceneID="J6L-Fw-P6k">
             <objects>
-                <viewController id="vvw-Hi-Gmx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FullSizePhotoViewController" id="vvw-Hi-Gmx" customClass="FullSizePhotoViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z79-5c-bFr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qsb-e5-Ne7">
+                                <rect key="frame" x="0.0" y="288" width="414" height="325"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-ff-8bU">
+                                <rect key="frame" x="186" y="203" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0wY-0V-4iQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="qsb-e5-Ne7" firstAttribute="leading" secondItem="0wY-0V-4iQ" secondAttribute="leading" id="Fhy-jA-Jyl"/>
+                            <constraint firstItem="0wY-0V-4iQ" firstAttribute="bottom" secondItem="qsb-e5-Ne7" secondAttribute="bottom" constant="200" id="b6n-Ar-UP3"/>
+                            <constraint firstItem="0wY-0V-4iQ" firstAttribute="trailing" secondItem="qsb-e5-Ne7" secondAttribute="trailing" id="cvj-5w-wum"/>
+                            <constraint firstItem="qsb-e5-Ne7" firstAttribute="top" secondItem="0wY-0V-4iQ" secondAttribute="top" constant="200" id="mae-Gt-mdX"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hjr-gL-9w8"/>
+                    <connections>
+                        <outlet property="fullSizePhoto" destination="qsb-e5-Ne7" id="b5s-nF-cFn"/>
+                        <outlet property="label" destination="ioh-ff-8bU" id="MRg-zb-SqD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaX-4L-PW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +579,9 @@
         <image name="rectangle.3.group.fill" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
