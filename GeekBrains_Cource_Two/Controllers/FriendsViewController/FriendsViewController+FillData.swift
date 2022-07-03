@@ -8,6 +8,29 @@
 import UIKit
 
 var friendsArray: [Friend] = []
+var sortedArray = [Character:[Friend]]()
+
+
+func fillNewArray(friends: [Friend]) -> [Character:[Friend]] {
+    var newArray = [Character:[Friend]]()
+    
+    friends.forEach { friend in
+
+        guard let firstChar = friend.name.first else { return }
+
+        if var thisCharCities = newArray[firstChar] {
+            thisCharCities.append(friend)
+            newArray[firstChar] = thisCharCities
+        } else {
+            newArray[firstChar] = friends
+        }
+    }
+
+return newArray
+}
+
+
+
 
 ///заполняем массив друзьями
 func fillFriendsArray() {

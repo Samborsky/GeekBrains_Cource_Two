@@ -10,14 +10,21 @@ import UIKit
 class FriendsViewController: UIViewController {
 
     @IBOutlet weak var myFriendsTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendsToGallerySeague = "fromFriendsToGallery"
     ///высота ячейки
-    let cellHight = CGFloat(150)
+    let cellHight = CGFloat(130)
     var lettersArray = [String]()
+    var newLettersArray = [String]()
     var newFriendArray = [Friend]()
-  
+    var searchFriendsArray = [Friend]()
+
+
+    
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myFriendsTableView.reloadData()
@@ -32,16 +39,20 @@ class FriendsViewController: UIViewController {
         super.viewDidLoad()
         fillFriendsArray()
         firstFriendLetter()
+        searchFriendsArray = friendsArray
+        newLettersArray = lettersArray
 
+        sortedArray = fillNewArray(friends: friendsArray)
         //регистрируем нашу ячейку в таблице. nibName это название нашего xib файла, просто его копируем. forCellReuseIdentifier это строковый идентификатор ячейки, для определения нужно типа ячейки в TableView(чтобы ячейка была именно та, которую мы создали в xib). Его лучше указать через константу, чтобы не было ошибок в дальнейшем
         myFriendsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
 
-
         myFriendsTableView.delegate = self
-
         //дальше мы говорим TableView какие ячейки отображать, для этого используем метод dataSource(), в него мы передаем класс, который будет отвечать за заполнение TableView, в нашем случае self(FriendsViewController)
         myFriendsTableView.dataSource = self
+        searchBar.delegate = self
+
     }
+
 ///метод который добавляет первую  букву имени в новый массив
     func firstFriendLetter(){
         for item in friendsArray {
@@ -77,3 +88,25 @@ var resultArray = [Friend]()
         }
     }
 }
+extension FriendsViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+
+        if searchText.isEmpty {
+            friendsArray = searchFriendsArray
+            lettersArray = newLettersArray
+        } else {
+            friendsArray = friendsArray.filter({ friendsItem in
+                friendsItem.name.lowercased().contains(searchText.lowercased())
+            })
+            lettersArray = [String(searchText.prefix(1))]
+
+
+        }
+        self.myFriendsTableView.reloadData()
+    }
+
+}
+
+

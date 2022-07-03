@@ -21,16 +21,15 @@ extension FriendsViewController: UITableViewDataSource {
     ///метод позволяющий заполнять ячейки таблицы
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //приводим нашу ячейку к типу xib файла(UITableViewCell)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { preconditionFailure("error") }
         //делаем аватарку круглой
         cell.viewForShadow.layer.cornerRadius = cell.viewForShadow.bounds.height / 2
-        cell.avatarImageView.layer.cornerRadius = cell.viewForShadow.bounds.height / 2
+        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
         
         //конфигурируем ячейку, наполняя ее данными
         cell.configure(friend: test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row])
 return cell
     }
-    
 
 
 ///метод позволяющий удалять строку при свайпе справа

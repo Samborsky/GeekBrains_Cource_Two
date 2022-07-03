@@ -156,28 +156,71 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FFc-EQ-Lf1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hki-CW-93Q">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qys-Qq-hVF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FFc-EQ-Lf1" firstAttribute="top" secondItem="hki-CW-93Q" secondAttribute="bottom" id="5XZ-Vh-A4P"/>
+                            <constraint firstItem="hki-CW-93Q" firstAttribute="top" secondItem="Qys-Qq-hVF" secondAttribute="top" id="XxT-a2-EVK"/>
                             <constraint firstItem="Qys-Qq-hVF" firstAttribute="bottom" secondItem="FFc-EQ-Lf1" secondAttribute="bottom" id="b28-2v-DuJ"/>
+                            <constraint firstItem="hki-CW-93Q" firstAttribute="trailing" secondItem="Qys-Qq-hVF" secondAttribute="trailing" id="cWH-rp-UBj"/>
                             <constraint firstItem="Qys-Qq-hVF" firstAttribute="trailing" secondItem="FFc-EQ-Lf1" secondAttribute="trailing" id="ct1-H6-K3d"/>
                             <constraint firstItem="FFc-EQ-Lf1" firstAttribute="leading" secondItem="Qys-Qq-hVF" secondAttribute="leading" id="ct5-Ip-UYk"/>
-                            <constraint firstItem="FFc-EQ-Lf1" firstAttribute="top" secondItem="Qys-Qq-hVF" secondAttribute="top" id="wdZ-se-uqS"/>
+                            <constraint firstItem="hki-CW-93Q" firstAttribute="leading" secondItem="Qys-Qq-hVF" secondAttribute="leading" id="reg-2n-Wyp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мои друзья" id="GwT-qu-VVu"/>
                     <connections>
                         <outlet property="myFriendsTableView" destination="FFc-EQ-Lf1" id="T0g-DR-4sf"/>
+                        <outlet property="searchBar" destination="hki-CW-93Q" id="mK8-F6-74J"/>
                         <segue destination="nXW-XU-k49" kind="show" identifier="fromFriendsToGallery" id="WvI-JJ-wsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ti-0Q-VdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5353.6231884057979" y="-534.375"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="4dX-6a-dOK">
+            <objects>
+                <viewController storyboardIdentifier="NewsViewController" id="Xck-jG-t2J" customClass="NewsViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rhw-FE-y42">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="05b-gv-rjA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9jp-Gz-ZGh"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="9jp-Gz-ZGh" firstAttribute="trailing" secondItem="05b-gv-rjA" secondAttribute="trailing" id="98b-ne-bDh"/>
+                            <constraint firstItem="05b-gv-rjA" firstAttribute="leading" secondItem="9jp-Gz-ZGh" secondAttribute="leading" id="Hxa-Xc-SaF"/>
+                            <constraint firstItem="9jp-Gz-ZGh" firstAttribute="bottom" secondItem="05b-gv-rjA" secondAttribute="bottom" id="OVA-Sa-Ywq"/>
+                            <constraint firstItem="05b-gv-rjA" firstAttribute="top" secondItem="9jp-Gz-ZGh" secondAttribute="top" id="qeC-UF-a0j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="D8T-yl-Hy6"/>
+                    <connections>
+                        <outlet property="tableView" destination="05b-gv-rjA" id="8fL-Hw-oss"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6Q-2a-xhm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5354" y="142"/>
         </scene>
         <!--Галерея-->
         <scene sceneID="Cct-bL-aKi">
@@ -296,7 +339,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8F-n6-B4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="YiG-Dd-oZK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6183" y="127"/>
+            <point key="canvasLocation" x="6223" y="960"/>
         </scene>
         <!--Мои группы-->
         <scene sceneID="AAR-GB-BT3">
@@ -333,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZn-oK-3XA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5354" y="127"/>
+            <point key="canvasLocation" x="5354" y="960"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="YzL-gh-LoN">
@@ -508,6 +551,7 @@
                     <connections>
                         <segue destination="AfL-OY-yHg" kind="relationship" relationship="viewControllers" id="FZi-Oc-uQl"/>
                         <segue destination="VgY-Ni-bl8" kind="relationship" relationship="viewControllers" id="cJF-ga-Stc"/>
+                        <segue destination="SbQ-lV-JKS" kind="relationship" relationship="viewControllers" id="6i5-mz-LwC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MB0-0T-It7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -551,7 +595,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIU-en-vbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4444.927536231884" y="126.5625"/>
+            <point key="canvasLocation" x="4484" y="960"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nKZ-RY-2IS">
@@ -571,9 +615,29 @@
             </objects>
             <point key="canvasLocation" x="1952.1739130434785" y="99.107142857142847"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="oLl-Ef-MWY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SbQ-lV-JKS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" selectedImage="newspaper" catalog="system" id="9Az-6n-QcY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qCn-iU-opY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xck-jG-t2J" kind="relationship" relationship="rootViewController" id="SEh-40-dnY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzR-8m-tet" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4483" y="142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="VK_logo" width="552" height="96"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.3.group.fill" catalog="system" width="128" height="81"/>
