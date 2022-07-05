@@ -137,6 +137,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nIn-yS-pa1"/>
                     <connections>
+                        <outlet property="loginButton" destination="1ga-eZ-ea4" id="ogY-9V-iec"/>
                         <outlet property="loginTextField" destination="BRh-CQ-f1U" id="Zii-2v-Yqa"/>
                         <outlet property="passwordTextField" destination="fJb-Lg-L0x" id="hPQ-gg-LWQ"/>
                         <segue destination="adI-7r-S8Q" kind="presentation" identifier="toTabBarController" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="oWh-z7-gnq"/>
@@ -205,7 +206,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9jp-Gz-ZGh"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9jp-Gz-ZGh" firstAttribute="trailing" secondItem="05b-gv-rjA" secondAttribute="trailing" id="98b-ne-bDh"/>
                             <constraint firstItem="05b-gv-rjA" firstAttribute="leading" secondItem="9jp-Gz-ZGh" secondAttribute="leading" id="Hxa-Xc-SaF"/>
@@ -619,7 +620,7 @@
         <scene sceneID="oLl-Ef-MWY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SbQ-lV-JKS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" selectedImage="newspaper" catalog="system" id="9Az-6n-QcY"/>
+                    <tabBarItem key="tabBarItem" title="Новости" image="newspaper" catalog="system" id="9Az-6n-QcY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qCn-iU-opY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

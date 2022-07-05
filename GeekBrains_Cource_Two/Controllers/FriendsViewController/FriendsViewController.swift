@@ -49,7 +49,11 @@ class FriendsViewController: UIViewController {
         myFriendsTableView.delegate = self
         //дальше мы говорим TableView какие ячейки отображать, для этого используем метод dataSource(), в него мы передаем класс, который будет отвечать за заполнение TableView, в нашем случае self(FriendsViewController)
         myFriendsTableView.dataSource = self
+
         searchBar.delegate = self
+        searchBar.placeholder = "Начните вводить имя друга"
+
+
 
     }
 

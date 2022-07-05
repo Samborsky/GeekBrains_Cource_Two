@@ -9,32 +9,46 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
+//MARK: - аутлеты
+
+
     @IBOutlet weak var newsTextLabel: UILabel!
+    
+    @IBOutlet weak var photo: UIImageView!
 
-    @IBOutlet weak var firstImage: UIImageView!
+    @IBOutlet weak var likesLabel: UILabel!
 
-    @IBOutlet weak var secondImage: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
 
-    @IBOutlet weak var thirdImage: UIImageView!
-
-    @IBOutlet weak var viewsCountLabel: UILabel!
+    @IBOutlet weak var viewsLabel: UILabel!
 
 
+
+//MARK: - константы и переменные
+    var isLike = true
+    var likesCount = 0
+    var viewsCount = 0
+
+
+    //MARK: - методы
+
+//меняем внешний вид кнопки
+    func likeButtonAppearence() {
+        likeButton.layer.shadowColor = UIColor.black.cgColor
+        likeButton.layer.shadowRadius = 5
+        likeButton.layer.shadowOffset = CGSize(width: 3, height: 3)
+        likeButton.layer.shadowOpacity = 0.8
+    }
+
+    //переиспользуем ячейки
     override func prepareForReuse() {
         super.prepareForReuse()
         newsTextLabel.text = nil
-        firstImage.image = nil
-        secondImage.image = nil
-        thirdImage.image = nil
-        viewsCountLabel.text = nil
+        photo.image = nil
+        //увеличиваем просмотры новостей при скролинге(ячейки пересоздаются и происходит подсчет)
+        viewsCount += 1
+        viewsLabel.text = String(viewsCount)
     }
-
-//пересмотреть нужен или нет
-    func configureCell(news: News) {
-        newsTextLabel.text = news.text
-//        firstImage.image = news.myFriendNews?.photos[0]
-    }
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,8 +61,29 @@ class NewsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+
+    //MARK: - экшены
+
+
     @IBAction func setLike(_ sender: UIButton) {
+        if isLike {
+            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            likeButton.tintColor = .red
+            likeButtonAppearence()
+            likesCount += 1
+        } else {
+            sender.setImage(UIImage(systemName: "heart"), for: .normal)
+            likeButton.tintColor = .lightGray
+
+            likesCount -= 1
+        }
+        isLike.toggle()
+        likesLabel.text = String(likesCount)
+
     }
+
+
+
 
     @IBAction func writeComment(_ sender: UIButton) {
     }

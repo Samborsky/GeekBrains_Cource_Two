@@ -9,6 +9,6 @@ import UIKit
 
 struct News {
     let text: String
-    let photos: [[UIImage?]]
+    let photos: UIImage?
 //    let myFriendNews: Friend?
 }

@@ -6,29 +6,24 @@
 //
 
 import UIKit
-
+//массив для экрана новостей
 var newsArray = [News]()
 
+//заполняем массив новостей
 func fillNewsArray() {
-//    let newsOne = News(text: "hello", photos: [UIImage(named: "friend1"), UIImage(named: "friend2"), UIImage(named: "friend3")])
-//    let newsTwo = News(text: String.init(repeating: "hello", count: 5), photos: [UIImage(named: "group1"), UIImage(named: "group2"), UIImage(named: "group3")])
-//    let newsThree = News(text: "kak dela?", photos: [UIImage(named: "group4"), UIImage(named: "group5"), UIImage(named: "group6")])
 
+    let newsOne = News(text: String.init(repeating: "текст для новостей  ", count: 5), photos: UIImage(named: "slimShady"))
+    let newsTwo = News(text: String.init(repeating: "текст для новостей  ", count: 20), photos: UIImage(named: "slimShady1"))
+    let newsThree = News(text: String.init(repeating: "текст для новостей ", count: 2), photos: UIImage(named: "slimShady2"))
+    let newsFour = News(text: String.init(repeating: "текст для новостей ", count: 8), photos: UIImage(named: "stark"))
+    let newsFive = News(text: String.init(repeating: "текст для новостей ", count: 1), photos: UIImage(named: "stark2"))
+    let newsSix = News(text: String.init(repeating: "текст для новостей ", count: 10), photos: UIImage(named: "stark3"))
 
-    let a1 = News(text: String.init(repeating: "hello ", count: 5), photos: [[UIImage(named: "friend1")], [UIImage(named: "friend2")], [UIImage(named: "friend3")]])
-    let a2 = News(text: String.init(repeating: "hello ", count: 15), photos: [[UIImage(named: "group1")], [UIImage(named: "group2")], [UIImage(named: "group3")]])
-    let a3 = News(text: String.init(repeating: "hello ", count: 7), photos: [[UIImage(named: "group4")], [UIImage(named: "group5")], [UIImage(named: "group6")]])
-
-
-//    newsArray.append(newsOne)
-//    newsArray.append(newsTwo)
-//    newsArray.append(newsThree)
-//    newsArray.append(newsFour)
-//    newsArray.append(newsFive)
-
-
-    newsArray.append(a1)
-    newsArray.append(a2)
-    newsArray.append(a3)
+    newsArray.append(newsOne)
+    newsArray.append(newsTwo)
+    newsArray.append(newsThree)
+    newsArray.append(newsFour)
+    newsArray.append(newsFive)
+    newsArray.append(newsSix)
 }
-let a = newsArray[0].photos[0][0]
+
