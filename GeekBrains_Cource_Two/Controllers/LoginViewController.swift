@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
 
+
     func addShadow(view: UIView) {
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowRadius = 1
@@ -26,7 +27,6 @@ class LoginViewController: UIViewController {
         tapGestureForHideKeyboard()
         addShadow(view: loginTextField)
         addShadow(view: passwordTextField)
-
     }
     //MARK: - убираем клавиатуру с экрана при нажатии на экран
     //UITapGestureRecognizer класс распознавания "тапа" по экрану. target - место где UIGestureRecognizer будет искать функцию, которая будет вызываться при тапе на экран(убираем клавиатуру), написав self или nil таргет, будет искать функцию в текущем классе. action - метод который будет вызываться, с указанием #selector(имяМетода)
