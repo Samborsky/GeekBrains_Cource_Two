@@ -25,6 +25,7 @@
 		AC18DA7E286E2F89006EDD75 /* GroupsViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18DA7D286E2F88006EDD75 /* GroupsViewController+Delegate.swift */; };
 		AC18DA80286E2F97006EDD75 /* GroupsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18DA7F286E2F97006EDD75 /* GroupsViewController+DataSource.swift */; };
 		AC18DA83286E3057006EDD75 /* GroupsViewController+FillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18DA82286E3057006EDD75 /* GroupsViewController+FillData.swift */; };
+		AC32D7B328777AA4001AF840 /* griby-taet led.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC32D7B228777AA4001AF840 /* griby-taet led.mp3 */; };
 		AC4F628028311EB700EB6B62 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F627F28311EB700EB6B62 /* RegistrationViewController.swift */; };
 		AC801982283589A100135395 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC801981283589A100135395 /* Friends.swift */; };
 		AC801984283589B400135395 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC801983283589B400135395 /* Groups.swift */; };
@@ -64,6 +65,7 @@
 		AC18DA7D286E2F88006EDD75 /* GroupsViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController+Delegate.swift"; sourceTree = "<group>"; };
 		AC18DA7F286E2F97006EDD75 /* GroupsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController+DataSource.swift"; sourceTree = "<group>"; };
 		AC18DA82286E3057006EDD75 /* GroupsViewController+FillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController+FillData.swift"; sourceTree = "<group>"; };
+		AC32D7B228777AA4001AF840 /* griby-taet led.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "griby-taet led.mp3"; sourceTree = "<group>"; };
 		AC4F627F28311EB700EB6B62 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AC801981283589A100135395 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		AC801983283589B400135395 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				AC8019802835894F00135395 /* Model */,
 				ACAE162B2832F9AC00293729 /* Extensions */,
 				84684EE52826A54800ADE6AD /* Main.storyboard */,
+				AC32D7B228777AA4001AF840 /* griby-taet led.mp3 */,
 				84684EDF2826A54800ADE6AD /* AppDelegate.swift */,
 				84684EE12826A54800ADE6AD /* SceneDelegate.swift */,
 				84684EE82826A54F00ADE6AD /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 				84684EE92826A54F00ADE6AD /* Assets.xcassets in Resources */,
 				AC80198928358C1200135395 /* CustomTableViewCell.xib in Resources */,
 				84684EE72826A54800ADE6AD /* Main.storyboard in Resources */,
+				AC32D7B328777AA4001AF840 /* griby-taet led.mp3 in Resources */,
 				ACA4CD5A2870F4BC00A1590E /* NewsTableViewCell.xib in Resources */,
 				AC15829C284691A700D662B0 /* GalleryCollectionCell.xib in Resources */,
 			);

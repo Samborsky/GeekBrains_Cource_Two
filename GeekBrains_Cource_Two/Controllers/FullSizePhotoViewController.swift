@@ -15,6 +15,7 @@ class FullSizePhotoViewController: UIViewController {
     var labelNew = ""
 
     var photo: UIImage?
+//    var photosArray = [UIImage?]
 
     let indexPath = UITableView()
 

@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NewsTableViewCell: UITableViewCell {
 
 //MARK: - аутлеты
 
-
+//плеер
+    @IBOutlet weak var songVolumeSlider: UISlider!
+    @IBOutlet weak var songDurationSlider: UISlider!
+    @IBOutlet weak var songTimeFrame: UILabel!
     @IBOutlet weak var newsTextLabel: UILabel!
-    
+    @IBOutlet weak var playPauseButton: UIButton!
+
+
+    //остальное
     @IBOutlet weak var photo: UIImageView!
 
     @IBOutlet weak var likesLabel: UILabel!
@@ -22,12 +29,35 @@ class NewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var viewsLabel: UILabel!
 
+    @IBOutlet weak var volumeLabel: UILabel!
 
 
 //MARK: - константы и переменные
     var isLike = true
     var likesCount = 0
     var viewsCount = 0
+    var player = AVAudioPlayer()
+
+
+    //плеер
+    func playerCatch() {
+        do {
+            if let audioPath = Bundle.main.path(forResource: "griby-taet led", ofType: "mp3") {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
+                self.songDurationSlider.maximumValue = Float(player.duration)
+                self.songTimeFrame.text = "Грибы - Тает лед"
+                player.volume = 50
+//                songVolumeSlider.value = 50
+            }
+        } catch {
+            print("error")
+        }
+
+    }
+
+    //плеер
+
+
 
 
     //MARK: - методы
@@ -48,6 +78,7 @@ class NewsTableViewCell: UITableViewCell {
         //увеличиваем просмотры новостей при скролинге(ячейки пересоздаются и происходит подсчет)
         viewsCount += 1
         viewsLabel.text = String(viewsCount)
+        volumeLabel.text = nil
     }
 
     override func awakeFromNib() {
@@ -63,6 +94,31 @@ class NewsTableViewCell: UITableViewCell {
 
 
     //MARK: - экшены
+
+///меняем громкость песни
+    @IBAction func changeSongVolume(_ sender: UISlider) {
+        self.player.volume = songVolumeSlider.value
+        self.songVolumeSlider.minimumValue = 0
+        self.songVolumeSlider.maximumValue = 100
+        self.volumeLabel.text = String(Int(self.songVolumeSlider.value))
+    }
+    ///перематываем песню
+    @IBAction func changeSongDuration(_ sender: UISlider) {
+        self.player.currentTime = TimeInterval(songDurationSlider.value)
+
+    }
+    
+    @IBAction func musicButton(_ sender: UIButton) {
+        if player.isPlaying {
+            playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            player.pause()
+        } else {
+            playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            player.play()
+        }
+
+    }
+
 
 
     @IBAction func setLike(_ sender: UIButton) {
@@ -81,8 +137,6 @@ class NewsTableViewCell: UITableViewCell {
         likesLabel.text = String(likesCount)
 
     }
-
-
 
 
     @IBAction func writeComment(_ sender: UIButton) {

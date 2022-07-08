@@ -40,6 +40,7 @@ extension NewsViewController: UITableViewDataSource {
         cell.newsTextLabel.text = newsArray[indexPath.row].text
         cell.photo.image = newsArray[indexPath.row].photos
 //        cell.likeButtonAppearence()
+        cell.playerCatch()
         return cell
 
     }
