@@ -75,6 +75,7 @@
             <connections>
                 <outlet property="container" destination="NpE-wh-FX5" id="Jgj-gI-7ly"/>
                 <outlet property="likeControl" destination="T28-u2-HS1" id="Xx2-Oo-rQA"/>
+                <outlet property="likePhoto" destination="xBx-bF-ahl" id="CJv-g0-D7B"/>
                 <outlet property="likesCount" destination="UBN-Be-42D" id="9Zk-C5-gx9"/>
                 <outlet property="photoImageView" destination="bet-qU-7Ra" id="7hC-EH-sm7"/>
             </connections>

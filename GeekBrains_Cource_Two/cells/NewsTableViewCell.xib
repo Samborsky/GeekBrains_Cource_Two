@@ -182,6 +182,7 @@
                 <outlet property="newsTextLabel" destination="X6o-g7-dlH" id="7mX-yl-3O6"/>
                 <outlet property="photo" destination="I4r-mH-vpf" id="kSC-5a-BUy"/>
                 <outlet property="playPauseButton" destination="Vad-fK-JwF" id="9PG-eK-9kx"/>
+                <outlet property="shareButton" destination="wpE-qh-c2H" id="Boi-Yk-VgZ"/>
                 <outlet property="songDurationSlider" destination="ub3-6R-hnq" id="5ay-xT-0Tr"/>
                 <outlet property="songTimeFrame" destination="phf-vF-hnz" id="PEg-NC-8xv"/>
                 <outlet property="songVolumeSlider" destination="o5s-jj-ayq" id="9hV-os-iKD"/>

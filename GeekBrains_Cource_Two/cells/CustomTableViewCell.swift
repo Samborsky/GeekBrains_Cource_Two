@@ -49,6 +49,18 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+
+    @IBAction func pressAvatarButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 1) {
+            self.avatarImageView.frame = CGRect(x: self.avatarImageView.frame.origin.x + 15, y: self.avatarImageView.frame.origin.y + 15, width: self.avatarImageView.frame.width - 30, height: self.avatarImageView.frame.height - 30)
+        }
+        UIView.animate(withDuration: 1) {
+            self.viewForShadow.frame = CGRect(x: self.viewForShadow.frame.origin.x + 15, y: self.viewForShadow.frame.origin.y + 15, width: self.viewForShadow.frame.width - 30, height: self.viewForShadow.frame.height - 30)
+        }
+
+    }
+
+
 }
 

@@ -27,14 +27,27 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-JA-nfs">
                                 <rect key="frame" x="0.0" y="0.0" width="173" height="173"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFg-dF-Cf0">
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="173"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="pressAvatarButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dKC-Mp-ofp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BPd-JA-nfs" firstAttribute="top" secondItem="nE7-ID-DO4" secondAttribute="top" id="AT1-QM-Yrb"/>
                             <constraint firstAttribute="bottom" secondItem="ReE-gL-OdM" secondAttribute="bottom" id="D6X-Uz-ByM"/>
                             <constraint firstAttribute="width" secondItem="nE7-ID-DO4" secondAttribute="height" multiplier="1:1" id="EN5-Kf-z71"/>
+                            <constraint firstItem="fFg-dF-Cf0" firstAttribute="centerY" secondItem="BPd-JA-nfs" secondAttribute="centerY" id="FJ9-wq-IeU"/>
                             <constraint firstAttribute="height" constant="173" id="IKY-Gy-p6d"/>
                             <constraint firstAttribute="trailing" secondItem="ReE-gL-OdM" secondAttribute="trailing" id="LjF-iQ-6aI"/>
+                            <constraint firstItem="fFg-dF-Cf0" firstAttribute="height" secondItem="BPd-JA-nfs" secondAttribute="height" id="Ovc-rG-UNl"/>
+                            <constraint firstItem="fFg-dF-Cf0" firstAttribute="width" secondItem="BPd-JA-nfs" secondAttribute="width" id="SVP-Li-DI7"/>
+                            <constraint firstItem="fFg-dF-Cf0" firstAttribute="centerX" secondItem="BPd-JA-nfs" secondAttribute="centerX" id="Yln-07-grp"/>
                             <constraint firstItem="ReE-gL-OdM" firstAttribute="leading" secondItem="nE7-ID-DO4" secondAttribute="leading" id="k3M-a7-9Lw"/>
                             <constraint firstItem="BPd-JA-nfs" firstAttribute="leading" secondItem="nE7-ID-DO4" secondAttribute="leading" id="mTv-FV-W8O"/>
                             <constraint firstItem="ReE-gL-OdM" firstAttribute="top" secondItem="nE7-ID-DO4" secondAttribute="top" id="qeN-IQ-tWo"/>

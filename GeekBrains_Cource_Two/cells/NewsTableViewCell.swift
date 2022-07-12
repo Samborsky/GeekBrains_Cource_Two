@@ -10,6 +10,9 @@ import AVFoundation
 
 class NewsTableViewCell: UITableViewCell {
 
+    var activityController: UIActivityViewController? = nil
+
+
 //MARK: - аутлеты
 
 //плеер
@@ -18,6 +21,9 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var songTimeFrame: UILabel!
     @IBOutlet weak var newsTextLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
+
+    @IBOutlet weak var shareButton: UIButton!
+
 
 
     //остальное
@@ -107,7 +113,7 @@ class NewsTableViewCell: UITableViewCell {
         self.player.currentTime = TimeInterval(songDurationSlider.value)
 
     }
-    
+    //играть/пауза песни
     @IBAction func musicButton(_ sender: UIButton) {
         if player.isPlaying {
             playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -143,6 +149,7 @@ class NewsTableViewCell: UITableViewCell {
     }
 
     @IBAction func sharePost(_ sender: UIButton) {
+      
     }
 
 

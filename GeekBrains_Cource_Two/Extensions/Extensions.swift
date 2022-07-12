@@ -24,3 +24,23 @@ extension UIViewController {
     }
 
 }
+//метод убирающий клавиатуру, при нажатии return
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.loginTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        return true
+    }
+}
+//метод убирающий клавиатуру, при нажатии return
+
+extension RegistrationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.loginTextFieldView2.resignFirstResponder()
+        self.passwordTextFieldView2.resignFirstResponder()
+        self.repeatPasswordView2.resignFirstResponder()
+        return true
+    }
+}
+
+

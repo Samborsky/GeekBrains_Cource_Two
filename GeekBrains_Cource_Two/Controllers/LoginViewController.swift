@@ -14,12 +14,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
 
-
-let buttonForPasswordSecure = UIButton()
-
-
-
-
     func addShadow(view: UIView) {
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowRadius = 1
@@ -32,9 +26,8 @@ let buttonForPasswordSecure = UIButton()
         tapGestureForHideKeyboard()
         addShadow(view: loginTextField)
         addShadow(view: passwordTextField)
-        buttonForPasswordSecure.frame = CGRect(x: 30, y: 30, width: 20, height: 20)
-        buttonForPasswordSecure.backgroundColor = .red
-        view.addSubview(buttonForPasswordSecure)
+        passwordTextField.delegate = self
+        loginTextField.delegate = self
     }
     //MARK: - убираем клавиатуру с экрана при нажатии на экран
     //UITapGestureRecognizer класс распознавания "тапа" по экрану. target - место где UIGestureRecognizer будет искать функцию, которая будет вызываться при тапе на экран(убираем клавиатуру), написав self или nil таргет, будет искать функцию в текущем классе. action - метод который будет вызываться, с указанием #selector(имяМетода)
@@ -79,11 +72,11 @@ let buttonForPasswordSecure = UIButton()
 //            loginTextField.backgroundColor = UIColor.red
 //            passwordTextField.backgroundColor = UIColor.red
 //
-//            ///метод позволяющий выполнять код внутри замыкания с задержкой
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-//                self.loginTextField.backgroundColor = UIColor.white
-//                self.passwordTextField.backgroundColor = UIColor.white
-//            }
+            ///метод позволяющий выполнять код внутри замыкания с задержкой
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+                self.loginTextField.backgroundColor = UIColor.white
+                self.passwordTextField.backgroundColor = UIColor.white
+            }
 //
 //            alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
 //        }
@@ -92,6 +85,7 @@ let buttonForPasswordSecure = UIButton()
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
         print("нажатие на кнопку Регистрация")
         print("мы на экране RegistrationViewController")
+
         performSegue(withIdentifier: "toReg", sender: nil)
 
     }

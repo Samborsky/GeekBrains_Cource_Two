@@ -23,6 +23,9 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureForHideKeyboard()
+        loginTextFieldView2.delegate = self
+        passwordTextFieldView2.delegate = self
+        repeatPasswordView2.delegate = self
     }
     ///нажатие и логика кнопки "Зарегистрироваться"
     @IBAction func registrationButtonView2(_ sender: Any) {
