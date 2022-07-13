@@ -8,6 +8,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+
+    @IBOutlet weak var dotOneView: UIView!
+    
+    @IBOutlet weak var dotTwoView: UIView!
+    
+    @IBOutlet weak var dotThreeView: UIView!
+    
     @IBOutlet weak var loginTextField: UITextField!
 
     @IBOutlet weak var passwordTextField: UITextField!
@@ -19,6 +26,17 @@ class LoginViewController: UIViewController {
         view.layer.shadowRadius = 1
         view.layer.shadowOpacity = 0.5
         view.layer.shadowOffset = CGSize(width: 2, height: 2)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dotOneView.layer.cornerRadius = dotOneView.frame.width / 2
+        dotTwoView.layer.cornerRadius = dotTwoView.frame.width / 2
+        dotThreeView.layer.cornerRadius = dotThreeView.frame.width / 2
+        dotOneView.backgroundColor = .clear
+        dotTwoView.backgroundColor = .clear
+        dotThreeView.backgroundColor = .clear
+
     }
 
     override func viewDidLoad() {
@@ -48,6 +66,34 @@ class LoginViewController: UIViewController {
         guard let login = loginTextField.text,
               let password = passwordTextField.text else { return }
 
+        UIView.animate(withDuration: 0) {
+            self.loginButton.setTitle(" ", for: .normal)
+        }
+        UIView.animate(withDuration: 1, delay: 0.3, options: .repeat) {
+            self.dotOneView.backgroundColor = .gray
+            self.dotOneView.alpha = 1
+        }
+        UIView.animate(withDuration: 1, delay: 0.7, options: .repeat) {
+            self.dotTwoView.backgroundColor = .gray
+
+            self.dotTwoView.alpha = 1
+        }
+        UIView.animate(withDuration: 1, delay: 1.1, options: .repeat) {
+            self.dotThreeView.backgroundColor = .gray
+
+            self.dotThreeView.alpha = 1
+        }
+
+        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
+            self.performSegue(withIdentifier: "toTabBarController", sender: nil)
+            }
+
+
+
+
+
+
+        }
 //            print("Вы вошли")
 //
 //        if (login == "login" && password == "qwerty") || (login == loginArray.first(where: {$0 == login}) && password == passwordArray.first(where: {$0 == password})) {
@@ -55,7 +101,7 @@ class LoginViewController: UIViewController {
 //
 //            print("Вы вошли")
 //            print("мы на экране FriendsViewController")
-            performSegue(withIdentifier: "toTabBarController", sender: nil)
+//            performSegue(withIdentifier: "toTabBarController", sender: nil)
 //            //дальше логика, если поля пустые
 //        } else if login == "" || password == "" {
 //
@@ -73,14 +119,14 @@ class LoginViewController: UIViewController {
 //            passwordTextField.backgroundColor = UIColor.red
 //
             ///метод позволяющий выполнять код внутри замыкания с задержкой
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-                self.loginTextField.backgroundColor = UIColor.white
-                self.passwordTextField.backgroundColor = UIColor.white
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+//                self.loginTextField.backgroundColor = UIColor.white
+//                self.passwordTextField.backgroundColor = UIColor.white
+//            }
 //
 //            alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
 //        }
-    }
+
 
     @IBAction func registrationButtonPressing(_ sender: UIButton) {
         print("нажатие на кнопку Регистрация")
@@ -90,6 +136,4 @@ class LoginViewController: UIViewController {
 
     }
 
-
     }
-

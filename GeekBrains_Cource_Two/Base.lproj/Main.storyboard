@@ -95,6 +95,30 @@
                                                     <action selector="registrationButtonPressing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdz-5o-NVv"/>
                                                 </connections>
                                             </button>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ny9-1Q-kra">
+                                                <rect key="frame" x="199.5" y="250" width="15" height="15"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="D87-e5-8y3"/>
+                                                    <constraint firstAttribute="width" constant="15" id="lpl-DQ-BAp"/>
+                                                </constraints>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1O-sX-rox">
+                                                <rect key="frame" x="224.5" y="250" width="15" height="15"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="15" id="0er-3H-cdc"/>
+                                                    <constraint firstAttribute="height" constant="15" id="Bdc-tc-Vgj"/>
+                                                </constraints>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuU-pY-FfB">
+                                                <rect key="frame" x="174.5" y="250" width="15" height="15"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="Xzb-xD-lmx"/>
+                                                    <constraint firstAttribute="width" constant="15" id="ghm-jd-Zqw"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -102,12 +126,18 @@
                                             <constraint firstItem="1ga-eZ-ea4" firstAttribute="leading" secondItem="guS-Ny-Eoi" secondAttribute="leading" constant="76" id="2Z5-fa-OOq"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="leading" secondItem="1ga-eZ-ea4" secondAttribute="leading" id="8BD-ni-uVJ"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="trailing" secondItem="1ga-eZ-ea4" secondAttribute="trailing" id="8mi-Mb-Z2E"/>
+                                            <constraint firstItem="u1O-sX-rox" firstAttribute="leading" secondItem="ny9-1Q-kra" secondAttribute="trailing" constant="10" id="Eig-vB-LbJ"/>
                                             <constraint firstAttribute="bottom" secondItem="bPm-WX-bCZ" secondAttribute="bottom" constant="230" id="Jf2-tn-zLB"/>
+                                            <constraint firstItem="ny9-1Q-kra" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="LNr-y4-KEG"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="centerX" secondItem="cTP-7J-lX4" secondAttribute="centerX" id="X1k-6x-JMt"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="top" secondItem="guS-Ny-Eoi" secondAttribute="top" constant="10" id="Zj2-5Q-7Ml"/>
+                                            <constraint firstItem="DuU-pY-FfB" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="b4U-7Q-XWX"/>
                                             <constraint firstAttribute="height" constant="550" id="dB8-Gg-AJL"/>
+                                            <constraint firstItem="ny9-1Q-kra" firstAttribute="leading" secondItem="DuU-pY-FfB" secondAttribute="trailing" constant="10" id="e3F-4K-3mm"/>
+                                            <constraint firstItem="u1O-sX-rox" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="i3X-S2-oxT"/>
                                             <constraint firstItem="bPm-WX-bCZ" firstAttribute="top" secondItem="1ga-eZ-ea4" secondAttribute="bottom" constant="16" id="mHW-Kg-BtY"/>
                                             <constraint firstAttribute="trailing" secondItem="1ga-eZ-ea4" secondAttribute="trailing" constant="76" id="qar-uc-Su1"/>
+                                            <constraint firstItem="ny9-1Q-kra" firstAttribute="centerX" secondItem="1ga-eZ-ea4" secondAttribute="centerX" id="riE-au-mHg"/>
                                             <constraint firstAttribute="trailing" secondItem="bPm-WX-bCZ" secondAttribute="trailing" constant="76" id="yaX-hy-dKV"/>
                                             <constraint firstItem="bPm-WX-bCZ" firstAttribute="leading" secondItem="guS-Ny-Eoi" secondAttribute="leading" constant="76" id="zYK-At-lbu"/>
                                         </constraints>
@@ -137,6 +167,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="nIn-yS-pa1"/>
                     <connections>
+                        <outlet property="dotOneView" destination="DuU-pY-FfB" id="3dc-ak-wBq"/>
+                        <outlet property="dotThreeView" destination="u1O-sX-rox" id="57O-F3-yEz"/>
+                        <outlet property="dotTwoView" destination="ny9-1Q-kra" id="pm1-QZ-tVt"/>
                         <outlet property="loginButton" destination="1ga-eZ-ea4" id="ogY-9V-iec"/>
                         <outlet property="loginTextField" destination="BRh-CQ-f1U" id="Zii-2v-Yqa"/>
                         <outlet property="passwordTextField" destination="fJb-Lg-L0x" id="hPQ-gg-LWQ"/>
@@ -647,6 +680,9 @@
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

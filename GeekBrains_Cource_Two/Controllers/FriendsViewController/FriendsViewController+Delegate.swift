@@ -15,7 +15,6 @@ extension FriendsViewController: UITableViewDelegate {
     ///метод обрабатывающий нажатие на ячейку. можно вывести в консоль куда именно нажал человек
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("нажата строка \(indexPath.row) в секции \(indexPath.section). Вкладка друзья")
-//print(searchFriendsArray)
 
         ///переход на GalleryViewController при нажатии на ячейку в таблице
         performSegue(withIdentifier: fromFriendsToGallerySeague, sender: nil)

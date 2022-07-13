@@ -28,7 +28,7 @@ class GalleryCollectionCell: UICollectionViewCell {
                 likesCount.text = (String(likes.randomElement()! + 1))
 
                 //анимация сердечка при лайке
-                UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse, .transitionFlipFromLeft]) {
+                UIView.animate(withDuration: 0.7, delay: 0, options: [.autoreverse, .transitionFlipFromLeft]) {
                     self.likePhoto.frame = CGRect(x: self.likePhoto.frame.origin.x + 5, y: self.likePhoto.frame.origin.y + 5, width: self.likePhoto.frame.width - 10, height: self.likePhoto.frame.height - 10)
                 }
 

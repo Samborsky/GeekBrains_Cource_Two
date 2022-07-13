@@ -58,7 +58,6 @@ class CustomTableViewCell: UITableViewCell {
         UIView.animate(withDuration: 1) {
             self.viewForShadow.frame = CGRect(x: self.viewForShadow.frame.origin.x + 15, y: self.viewForShadow.frame.origin.y + 15, width: self.viewForShadow.frame.width - 30, height: self.viewForShadow.frame.height - 30)
         }
-
     }
 
 
