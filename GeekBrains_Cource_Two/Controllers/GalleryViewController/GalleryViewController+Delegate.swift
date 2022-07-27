@@ -10,6 +10,7 @@ extension GalleryViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("нажатие на картинку №\(indexPath.item)")
+       
             performSegue(withIdentifier: "toFullSizePhoto", sender: nil)
     }
 }

@@ -14,6 +14,18 @@ extension UIViewController {
     func tapGestureForHideKeyboard() {
         let tapRecognizer = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
         view.addGestureRecognizer(tapRecognizer)
+
+
+        //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+        ////указываем с какого элемента или целого view считывать информацию
+        //        self.view.addGestureRecognizer(tapRecognizer)
+        //    }
+        ////метод убирающий клавиатуру с обязательной приставка @objc
+        //    @objc func tapFunction() {
+        //        //сам метод скрывающий клавиатуру
+        //        self.view.endEditing(true)
+
+
     }
     ///вызываем алерт тайтлом "Ошибка!" и с тексом ошибки message
     func alertErrorMessage(message: String) {
@@ -24,7 +36,7 @@ extension UIViewController {
     }
 
 }
-//метод убирающий клавиатуру, при нажатии return
+//метод убирающий клавиатуру, при нажатии return в поле логина
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.loginTextField.resignFirstResponder()
@@ -32,7 +44,7 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
-//метод убирающий клавиатуру, при нажатии return
+//метод убирающий клавиатуру, при нажатии return в поле ригистрации
 
 extension RegistrationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

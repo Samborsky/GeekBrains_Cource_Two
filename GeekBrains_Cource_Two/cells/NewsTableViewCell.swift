@@ -129,6 +129,7 @@ class NewsTableViewCell: UITableViewCell {
 
     @IBAction func setLike(_ sender: UIButton) {
         if isLike {
+
             likeButton.tintColor = .red
             likeButtonAppearence()
             likesCount += 1
@@ -137,7 +138,6 @@ class NewsTableViewCell: UITableViewCell {
             UIView.transition(with: likeButton, duration: 0.5, options: .transitionCrossDissolve) {
                 self.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             }
-
 
         } else {
             sender.setImage(UIImage(systemName: "heart"), for: .normal)

@@ -26,9 +26,13 @@ class GalleryViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "toFullSizePhoto" else { return }
-        guard let destinationVC = segue.destination as? FullSizePhotoViewController else { return }
-        destinationVC.photo = photos[0]
+        guard segue.identifier == "toFullSizePhoto",
+              //indexPathsForSelectedItems?.first позволяет вызвать первый элемент массива
+              let selectedPhoto = collectionView.indexPathsForSelectedItems?.first,
+        let destinationVC = segue.destination as? FullSizePhotoViewController else { return }
+        destinationVC.fullSizePhotosArray = photos
+        destinationVC.selectedPhotoIndex = selectedPhoto.item
+        print(selectedPhoto.row)
 
     }
 }

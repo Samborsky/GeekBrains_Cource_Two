@@ -9,21 +9,26 @@ import UIKit
 
 class FriendsViewController: UIViewController {
 
+    //MARK: - аутлеты и переменные
+
     @IBOutlet weak var myFriendsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendsToGallerySeague = "fromFriendsToGallery"
-    ///высота ячейки
     let cellHight = CGFloat(130)
-    var lettersArray = [String]()
-    var newLettersArray = [String]()
-    var newFriendArray = [Friend]()
-    var searchFriendsArray = [Friend]()
 
+    var lettersArray = [String]()
+    //массив первых букв для серчбара
+    var searchLettersArray = [String]()
+    var newFriendArray = [Friend]()
+    //массив друзей для серчбара
+    var searchFriendsArray = [Friend]()
+    var sortedArray = [Character:[Friend]]()
 
     
 
+    //MARK: - жизненные циклы
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,7 +45,7 @@ class FriendsViewController: UIViewController {
         fillFriendsArray()
         firstFriendLetter()
         searchFriendsArray = friendsArray
-        newLettersArray = lettersArray
+        searchLettersArray = lettersArray
 
         sortedArray = fillNewArray(friends: friendsArray)
         //регистрируем нашу ячейку в таблице. nibName это название нашего xib файла, просто его копируем. forCellReuseIdentifier это строковый идентификатор ячейки, для определения нужно типа ячейки в TableView(чтобы ячейка была именно та, которую мы создали в xib). Его лучше указать через константу, чтобы не было ошибок в дальнейшем
@@ -52,10 +57,9 @@ class FriendsViewController: UIViewController {
 
         searchBar.delegate = self
         searchBar.placeholder = "Начните вводить имя друга"
-
-
-
     }
+
+    //MARK: - IBAtion и методы
 
 ///метод который добавляет первую  букву имени в новый массив
     func firstFriendLetter(){
@@ -67,6 +71,8 @@ class FriendsViewController: UIViewController {
         }
 
     }
+
+//формируем новый массив друзей с учетом первой буквы
     func test(sourceArray: [Friend], letter: String) -> [Friend] {
 var resultArray = [Friend]()
         for item in sourceArray {
@@ -79,27 +85,30 @@ var resultArray = [Friend]()
     }
 
 
-//делаем переход по сеге и кастим до нужных классов - этот момент разобрать детально
+//делаем переход по сеге и кастим до нужных классов
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == fromFriendsToGallerySeague,
-//           let sourceVC = segue.source as? FriendsViewController,
            let destinationVC = segue.destination as? GalleryViewController,
-//           let friends = sender as? Friend, - приводим к типу Friend и получаем доступ к элементам
            let indexPath = myFriendsTableView.indexPathForSelectedRow {
+            //передаем имя из массива в тайтл
             destinationVC.title = test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].name
-//эта строка заменяет(наполняет) массив с фотками в GalleryViewController(photos) на массив фоток из friendsArray класса FriendsViewController (у них один тип UIImage поэтому нет конфликта)
+            //передаем фотографии в массив фотографий на GalleryViewController
             destinationVC.photos = test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].photos//можно использовать friends.photos
+            print(indexPath)
         }
     }
 }
+
+//MARK: - экстеншены
+
 extension FriendsViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-
         if searchText.isEmpty {
+            //если строка пустая, отображать копию массива(не тронутый)
             friendsArray = searchFriendsArray
-            lettersArray = newLettersArray
+            lettersArray = searchLettersArray
         } else {
             friendsArray = friendsArray.filter({ friendsItem in
                 friendsItem.name.lowercased().contains(searchText.lowercased())

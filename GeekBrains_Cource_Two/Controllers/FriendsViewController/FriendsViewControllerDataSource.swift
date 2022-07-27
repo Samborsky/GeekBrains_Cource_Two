@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 extension FriendsViewController: UITableViewDataSource {
 
     ///метод количества секций в таблице, по умолчанию == 1, если секций не больше 1, можно его не писать
@@ -18,7 +19,7 @@ extension FriendsViewController: UITableViewDataSource {
         return a.count
     }
 
-    ///метод позволяющий заполнять ячейки таблицы
+    //метод позволяющий заполнять ячейки таблицы
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //приводим нашу ячейку к типу xib файла(UITableViewCell)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { preconditionFailure("error") }
@@ -31,12 +32,10 @@ extension FriendsViewController: UITableViewDataSource {
 return cell
     }
 
-
 ///метод позволяющий удалять строку при свайпе справа
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _,_,_ in friendsArray.remove(at: indexPath.row)
+        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _,_,_  in friendsArray.remove(at: indexPath.row)
             self.lettersArray.remove(at: indexPath.row)
-//            self.lettersArray.remove(at: indexPath.row)
             tableView.reloadData()
             // код выше - замыкание, определяет какие действия будут выполнены при активации действия
         }
@@ -63,9 +62,8 @@ return cell
         return actions
     }
 
+//
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return lettersArray[section].uppercased()
     }
-
-   
 }

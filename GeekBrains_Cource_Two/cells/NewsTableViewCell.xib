@@ -97,6 +97,9 @@
                     </button>
                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ub3-6R-hnq">
                         <rect key="frame" x="42" y="365" width="181.5" height="34"/>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <nil key="thumbTintColor"/>
+                        </variation>
                         <connections>
                             <action selector="changeSongDuration:" destination="KGk-i7-Jjw" eventType="valueChanged" id="jm4-fQ-Ess"/>
                         </connections>

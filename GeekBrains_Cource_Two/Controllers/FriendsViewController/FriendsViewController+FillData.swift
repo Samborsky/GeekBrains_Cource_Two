@@ -7,9 +7,13 @@
 
 import UIKit
 
-var friendsArray: [Friend] = []
-var sortedArray = [Character:[Friend]]()
+//MARK: - аутлеты и переменные
 
+var friendsArray: [Friend] = []
+
+
+
+//MARK: - методы
 
 func fillNewArray(friends: [Friend]) -> [Character:[Friend]] {
     var newArray = [Character:[Friend]]()
@@ -25,12 +29,8 @@ func fillNewArray(friends: [Friend]) -> [Character:[Friend]] {
             newArray[firstChar] = friends
         }
     }
-
 return newArray
 }
-
-
-
 
 ///заполняем массив друзьями
 func fillFriendsArray() {

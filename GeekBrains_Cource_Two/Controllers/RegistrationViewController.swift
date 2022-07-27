@@ -20,6 +20,7 @@ class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var repeatPasswordView2: UITextField!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureForHideKeyboard()
@@ -27,8 +28,11 @@ class RegistrationViewController: UIViewController {
         passwordTextFieldView2.delegate = self
         repeatPasswordView2.delegate = self
     }
+
+
     ///нажатие и логика кнопки "Зарегистрироваться"
     @IBAction func registrationButtonView2(_ sender: Any) {
+
         guard let loginView2 = loginTextFieldView2.text,
               let password = passwordTextFieldView2.text,
               let repeatPassword = repeatPasswordView2.text else { return }
