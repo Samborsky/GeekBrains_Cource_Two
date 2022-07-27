@@ -25,7 +25,6 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var shareButton: UIButton!
 
 
-
     //остальное
     @IBOutlet weak var photo: UIImageView!
 
@@ -45,14 +44,16 @@ class NewsTableViewCell: UITableViewCell {
     var player = AVAudioPlayer()
 
 
+    
+
     //плеер
-    func playerCatch() {
+    func playerCatch(musicBand: String, songName: String ) {
         do {
-            if let audioPath = Bundle.main.path(forResource: "griby-taet led", ofType: "mp3") {
+            if let audioPath = Bundle.main.path(forResource: musicBand, ofType: "mp3") {
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
                 self.songDurationSlider.maximumValue = Float(player.duration)
-                self.songTimeFrame.text = "Грибы - Тает лед"
-                player.volume = 50
+                self.songTimeFrame.text = songName
+                player.volume = 0.5
 //                songVolumeSlider.value = 50
             }
         } catch {
@@ -105,8 +106,8 @@ class NewsTableViewCell: UITableViewCell {
     @IBAction func changeSongVolume(_ sender: UISlider) {
         self.player.volume = songVolumeSlider.value
         self.songVolumeSlider.minimumValue = 0
-        self.songVolumeSlider.maximumValue = 100
-        self.volumeLabel.text = String(Int(self.songVolumeSlider.value))
+        self.songVolumeSlider.maximumValue = 1
+        self.volumeLabel.text = String(Int(self.songVolumeSlider.value * 100))
     }
     ///перематываем песню
     @IBAction func changeSongDuration(_ sender: UISlider) {
@@ -156,9 +157,7 @@ class NewsTableViewCell: UITableViewCell {
 
     @IBAction func sharePost(_ sender: UIButton) {
       
+        
     }
 
-
-
-    
 }

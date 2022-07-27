@@ -8,6 +8,8 @@
 import UIKit
 //массив для экрана новостей
 var newsArray = [News]()
+let musicArray = ["gribi", "queen", "skryabin", "disturbed", "hardDrive", "kino"]
+let musicNamesForPlayer = ["Грибы, тает лед", "We Will Rock You", "Люди як корабли", "АааААаа", "Grifinilla", "Кончится лето"]
 
 //заполняем массив новостей
 func fillNewsArray() {

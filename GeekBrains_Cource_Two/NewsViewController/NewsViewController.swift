@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NewsViewController: UIViewController {
 
@@ -23,9 +24,10 @@ let reuseIdentifierNews = "reuseIdentifierNews"
 
 
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierNews)
-    }
-}
 
+    }
+
+}
 extension NewsViewController: UITableViewDelegate {
 
 }
@@ -40,11 +42,19 @@ extension NewsViewController: UITableViewDataSource {
         cell.newsTextLabel.text = newsArray[indexPath.row].text
         cell.photo.image = newsArray[indexPath.row].photos
 //        cell.likeButtonAppearence()
-        cell.playerCatch()
+        cell.playerCatch(musicBand: musicArray[indexPath.row], songName: musicNamesForPlayer[indexPath.row])
+        cell.volumeLabel.text = "50"
+        cell.shareButton.addTarget(self, action: #selector(test(action:)), for: .touchUpInside)
+
         return cell
 
     }
-    
+    @objc func test(action: UIButton) {
+      print("test")
+
+    }
+
+
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }

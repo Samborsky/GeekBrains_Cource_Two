@@ -25,7 +25,7 @@
 		AC18DA7E286E2F89006EDD75 /* GroupsViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18DA7D286E2F88006EDD75 /* GroupsViewController+Delegate.swift */; };
 		AC18DA80286E2F97006EDD75 /* GroupsViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18DA7F286E2F97006EDD75 /* GroupsViewController+DataSource.swift */; };
 		AC18DA83286E3057006EDD75 /* GroupsViewController+FillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18DA82286E3057006EDD75 /* GroupsViewController+FillData.swift */; };
-		AC32D7B328777AA4001AF840 /* griby-taet led.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC32D7B228777AA4001AF840 /* griby-taet led.mp3 */; };
+		AC32D7B328777AA4001AF840 /* gribi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC32D7B228777AA4001AF840 /* gribi.mp3 */; };
 		AC4F628028311EB700EB6B62 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F627F28311EB700EB6B62 /* RegistrationViewController.swift */; };
 		AC801982283589A100135395 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC801981283589A100135395 /* Friends.swift */; };
 		AC801984283589B400135395 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC801983283589B400135395 /* Groups.swift */; };
@@ -42,6 +42,11 @@
 		ACA4CD5E2871CC8E00A1590E /* NewsViewController+FillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4CD5D2871CC8D00A1590E /* NewsViewController+FillData.swift */; };
 		ACAE162D2832F9EA00293729 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE162C2832F9E900293729 /* Extensions.swift */; };
 		ACC5E577286B7D73001754F3 /* LikeControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5E576286B7D73001754F3 /* LikeControll.swift */; };
+		ACD90C522891C26D00F106CD /* queen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACD90C502891C26B00F106CD /* queen.mp3 */; };
+		ACD90C532891C26D00F106CD /* skryabin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACD90C512891C26D00F106CD /* skryabin.mp3 */; };
+		ACF658D62891CC5400309B91 /* disturbed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACF658D32891CC5100309B91 /* disturbed.mp3 */; };
+		ACF658D72891CC5400309B91 /* hardDrive.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACF658D42891CC5300309B91 /* hardDrive.mp3 */; };
+		ACF658D82891CC5400309B91 /* kino.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACF658D52891CC5400309B91 /* kino.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +70,7 @@
 		AC18DA7D286E2F88006EDD75 /* GroupsViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController+Delegate.swift"; sourceTree = "<group>"; };
 		AC18DA7F286E2F97006EDD75 /* GroupsViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController+DataSource.swift"; sourceTree = "<group>"; };
 		AC18DA82286E3057006EDD75 /* GroupsViewController+FillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsViewController+FillData.swift"; sourceTree = "<group>"; };
-		AC32D7B228777AA4001AF840 /* griby-taet led.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "griby-taet led.mp3"; sourceTree = "<group>"; };
+		AC32D7B228777AA4001AF840 /* gribi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gribi.mp3; sourceTree = "<group>"; };
 		AC4F627F28311EB700EB6B62 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AC801981283589A100135395 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		AC801983283589B400135395 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -82,6 +87,11 @@
 		ACA4CD5D2871CC8D00A1590E /* NewsViewController+FillData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsViewController+FillData.swift"; sourceTree = "<group>"; };
 		ACAE162C2832F9E900293729 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACC5E576286B7D73001754F3 /* LikeControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControll.swift; sourceTree = "<group>"; };
+		ACD90C502891C26B00F106CD /* queen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = queen.mp3; sourceTree = "<group>"; };
+		ACD90C512891C26D00F106CD /* skryabin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = skryabin.mp3; sourceTree = "<group>"; };
+		ACF658D32891CC5100309B91 /* disturbed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = disturbed.mp3; sourceTree = "<group>"; };
+		ACF658D42891CC5300309B91 /* hardDrive.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hardDrive.mp3; sourceTree = "<group>"; };
+		ACF658D52891CC5400309B91 /* kino.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kino.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +130,12 @@
 				AC8019802835894F00135395 /* Model */,
 				ACAE162B2832F9AC00293729 /* Extensions */,
 				84684EE52826A54800ADE6AD /* Main.storyboard */,
-				AC32D7B228777AA4001AF840 /* griby-taet led.mp3 */,
+				ACF658D32891CC5100309B91 /* disturbed.mp3 */,
+				ACF658D42891CC5300309B91 /* hardDrive.mp3 */,
+				ACF658D52891CC5400309B91 /* kino.mp3 */,
+				ACD90C502891C26B00F106CD /* queen.mp3 */,
+				ACD90C512891C26D00F106CD /* skryabin.mp3 */,
+				AC32D7B228777AA4001AF840 /* gribi.mp3 */,
 				84684EDF2826A54800ADE6AD /* AppDelegate.swift */,
 				84684EE12826A54800ADE6AD /* SceneDelegate.swift */,
 				84684EE82826A54F00ADE6AD /* Assets.xcassets */,
@@ -277,12 +292,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				84684EEC2826A54F00ADE6AD /* LaunchScreen.storyboard in Resources */,
+				ACF658D62891CC5400309B91 /* disturbed.mp3 in Resources */,
 				84684EE92826A54F00ADE6AD /* Assets.xcassets in Resources */,
+				ACD90C532891C26D00F106CD /* skryabin.mp3 in Resources */,
+				ACF658D72891CC5400309B91 /* hardDrive.mp3 in Resources */,
 				AC80198928358C1200135395 /* CustomTableViewCell.xib in Resources */,
 				84684EE72826A54800ADE6AD /* Main.storyboard in Resources */,
-				AC32D7B328777AA4001AF840 /* griby-taet led.mp3 in Resources */,
+				ACD90C522891C26D00F106CD /* queen.mp3 in Resources */,
+				AC32D7B328777AA4001AF840 /* gribi.mp3 in Resources */,
 				ACA4CD5A2870F4BC00A1590E /* NewsTableViewCell.xib in Resources */,
 				AC15829C284691A700D662B0 /* GalleryCollectionCell.xib in Resources */,
+				ACF658D82891CC5400309B91 /* kino.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
