@@ -12,6 +12,8 @@ import UIKit
 var loginArray = [String?]()
 var passwordArray = [String?]()
 
+var userDefaults = UserDefaults.standard
+
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var loginTextFieldView2: UITextField!
@@ -27,6 +29,8 @@ class RegistrationViewController: UIViewController {
         loginTextFieldView2.delegate = self
         passwordTextFieldView2.delegate = self
         repeatPasswordView2.delegate = self
+        
+
     }
 
 
@@ -43,10 +47,16 @@ class RegistrationViewController: UIViewController {
 //заполняем массивы с логином и паролем
             loginArray.append(loginView2)
             passwordArray.append(password)
+            
+            //записываем данные массива
+            userDefaults.set(loginArray, forKey: "loginArray")
+            userDefaults.set(passwordArray, forKey: "passwordArray")
 
             //всплывающий алерт
             let alertVC = UIAlertController.init(title: "Поздравляем!", message: "Вы успешно зарегистрировались. Используйте ваш логин и пароль для входа", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "ОК", style: .default, handler: nil)
+            let alertAction = UIAlertAction(title: "ОК", style: .default) { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
             alertVC.addAction(alertAction)
             present(alertVC, animated: true, completion: nil)
 

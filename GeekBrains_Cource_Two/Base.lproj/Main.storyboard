@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="adI-7r-S8Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pR5-F0-msN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -119,6 +119,19 @@
                                                     <constraint firstAttribute="width" constant="10" id="ghm-jd-Zqw"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-5v-zdb">
+                                                <rect key="frame" x="339" y="175" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="fxK-Yc-LoD"/>
+                                                    <constraint firstAttribute="width" constant="20" id="q4j-5b-4Lt"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.38036057350000002" green="0.38040986659999998" blue="0.38034385440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                                <connections>
+                                                    <action selector="showHidePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCv-58-q2Y"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -129,6 +142,7 @@
                                             <constraint firstItem="u1O-sX-rox" firstAttribute="leading" secondItem="ny9-1Q-kra" secondAttribute="trailing" constant="13" id="Eig-vB-LbJ"/>
                                             <constraint firstAttribute="bottom" secondItem="bPm-WX-bCZ" secondAttribute="bottom" constant="230" id="Jf2-tn-zLB"/>
                                             <constraint firstItem="ny9-1Q-kra" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="LNr-y4-KEG"/>
+                                            <constraint firstItem="5Hj-5v-zdb" firstAttribute="centerY" secondItem="fJb-Lg-L0x" secondAttribute="centerY" id="UIH-Lv-fTf"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="centerX" secondItem="cTP-7J-lX4" secondAttribute="centerX" id="X1k-6x-JMt"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="top" secondItem="guS-Ny-Eoi" secondAttribute="top" constant="10" id="Zj2-5Q-7Ml"/>
                                             <constraint firstItem="DuU-pY-FfB" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="b4U-7Q-XWX"/>
@@ -161,6 +175,7 @@
                         <constraints>
                             <constraint firstItem="yNd-HR-4JP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1WO-n6-agT"/>
                             <constraint firstItem="guS-Ny-Eoi" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="8e4-3n-0bC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Hj-5v-zdb" secondAttribute="trailing" constant="55" id="aC2-w1-Z3l"/>
                             <constraint firstItem="yNd-HR-4JP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c8v-6w-QmJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yNd-HR-4JP" secondAttribute="bottom" id="nw4-fn-DpE"/>
                         </constraints>
@@ -672,6 +687,7 @@
     </scenes>
     <resources>
         <image name="VK_logo" width="552" height="96"/>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="plus" catalog="system" width="128" height="113"/>
