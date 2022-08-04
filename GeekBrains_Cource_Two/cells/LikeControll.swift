@@ -11,13 +11,7 @@ class LikeControll: UIControl {
 
     @IBOutlet weak var likePhoto: UIImageView!
 
-
-
     var isLike = true
-
-
-
-
 
     override func awakeFromNib() {
         super.awakeFromNib()

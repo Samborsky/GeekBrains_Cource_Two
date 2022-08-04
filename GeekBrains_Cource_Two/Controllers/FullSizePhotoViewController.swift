@@ -15,8 +15,6 @@ class FullSizePhotoViewController: UIViewController {
         }
     }
 
-
-
     enum AnimationDirection {
         case left
         case right
@@ -172,14 +170,10 @@ class FullSizePhotoViewController: UIViewController {
     //свайп вниз
 
     @objc func downSwipeSelector(downSwipe: UISwipeGestureRecognizer) {
-        UIView.animate(withDuration: 0) {
-
-            
-        }
         print(#function)
-
+        self.navigationController?.popViewController(animated: true)
     }
-
+    
 //правый свайп
     @IBAction func rightSwipe(_ sender: UISwipeGestureRecognizer) {
         guard selectedPhotoIndex >= 1 else {return}

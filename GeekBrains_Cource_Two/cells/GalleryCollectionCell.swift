@@ -9,7 +9,6 @@ import UIKit
 
 class GalleryCollectionCell: UICollectionViewCell {
 
-
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var likePhoto: UIImageView!
     @IBOutlet weak var likesCount: UILabel!
@@ -34,8 +33,6 @@ class GalleryCollectionCell: UICollectionViewCell {
 
             }
         }
-
- 
 
     override func awakeFromNib() {
         super.awakeFromNib()

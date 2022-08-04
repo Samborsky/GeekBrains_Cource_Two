@@ -24,7 +24,6 @@ class NewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var shareButton: UIButton!
 
-
     //остальное
     @IBOutlet weak var photo: UIImageView!
 
@@ -43,9 +42,6 @@ class NewsTableViewCell: UITableViewCell {
     var viewsCount = 0
     var player = AVAudioPlayer()
 
-
-    
-
     //плеер
     func playerCatch(musicBand: String, songName: String ) {
         do {
@@ -59,13 +55,7 @@ class NewsTableViewCell: UITableViewCell {
         } catch {
             print("error")
         }
-
     }
-
-    //плеер
-
-
-
 
     //MARK: - методы
 
@@ -91,6 +81,14 @@ class NewsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //"заставляем" слайдер двигаться в момент проигрывания песни
+        var _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func updateSlider() {
+             songDurationSlider.value = Float(player.currentTime)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

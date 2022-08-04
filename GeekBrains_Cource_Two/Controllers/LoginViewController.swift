@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
         tapGestureForHideKeyboard()
         addShadow(view: loginTextField)
         addShadow(view: passwordTextField)
+        
         passwordTextField.delegate = self
         loginTextField.delegate = self
         
@@ -68,7 +69,8 @@ class LoginViewController: UIViewController {
         guard let login = loginTextField.text,
               let password = passwordTextField.text else { return }
 
-            if (login == "login" && password == "qwerty") || (login == userDefaults.stringArray(forKey: "loginArray")?.first && password == userDefaults.stringArray(forKey: "passwordArray")?.first) {
+            if login == userDefaults.stringArray(forKey: "loginArray")?.first,
+               password == userDefaults.stringArray(forKey: "passwordArray")?.first {
       		
                 print("мы на экране FriendsViewController")
                 
@@ -78,20 +80,15 @@ class LoginViewController: UIViewController {
                         }
                         UIView.animate(withDuration: 0.8, delay: 0, options: .repeat) {
                             self.dotOneView.backgroundColor = .gray
-                //            self.dotOneView.alpha = 1
                             self.dotOneView.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
                         }
                         UIView.animate(withDuration: 0.8, delay: 0.1, options: .repeat) {
                             self.dotTwoView.backgroundColor = .gray
                             self.dotTwoView.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
-
-                //            self.dotTwoView.alpha = 1
                         }
                         UIView.animate(withDuration: 0.8, delay: 0.2, options: .repeat) {
                             self.dotThreeView.backgroundColor = .gray
                             self.dotThreeView.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
-
-                //            self.dotThreeView.alpha = 1
                         }
 
                         //таймер перед выполнением сеги
@@ -99,7 +96,6 @@ class LoginViewController: UIViewController {
                             self.performSegue(withIdentifier: "toTabBarController", sender: nil)
                         }
 
-                    
                                 print("Вы вошли")
                     
                 //дальше логика, если поля пустые
@@ -123,7 +119,6 @@ class LoginViewController: UIViewController {
                     self.loginTextField.backgroundColor = UIColor.white
                     self.passwordTextField.backgroundColor = UIColor.white
                 }
-    
                 alertErrorMessage(message: "Вы ввели неправильные данные, попробуйте еще раз")
             }
     }
@@ -134,7 +129,6 @@ class LoginViewController: UIViewController {
         print("мы на экране RegistrationViewController")
 
         performSegue(withIdentifier: "toReg", sender: nil)
-
     }
     
     @IBAction func showHidePassword(_ sender: UIButton) {
@@ -142,11 +136,8 @@ class LoginViewController: UIViewController {
         if passwordTextField.isSecureTextEntry {
             sender.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         } else {
-            
             sender.setImage(UIImage(systemName: "eye"), for: .normal)
         }
         passwordTextField.isSecureTextEntry.toggle()
-
     }
-    
 }

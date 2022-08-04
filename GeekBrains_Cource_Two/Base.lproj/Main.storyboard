@@ -51,7 +51,7 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="la8-Y9-RzI">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="s3J-Aj-uVb">
                                                         <rect key="frame" x="0.0" y="42" width="248" height="34"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnR-oa-nhH">
@@ -120,14 +120,16 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-5v-zdb">
-                                                <rect key="frame" x="339" y="175" width="20" height="20"/>
+                                                <rect key="frame" x="306" y="172.5" width="25" height="25"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="fxK-Yc-LoD"/>
-                                                    <constraint firstAttribute="width" constant="20" id="q4j-5b-4Lt"/>
+                                                    <constraint firstAttribute="width" constant="25" id="2ep-7F-Y5W"/>
+                                                    <constraint firstAttribute="height" constant="25" id="5li-y9-iSX"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.38036057350000002" green="0.38040986659999998" blue="0.38034385440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="showHidePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCv-58-q2Y"/>
                                                 </connections>
@@ -137,13 +139,14 @@
                                         <constraints>
                                             <constraint firstItem="cTP-7J-lX4" firstAttribute="top" secondItem="Uxs-Xt-N7W" secondAttribute="bottom" constant="20" id="0vX-EB-JC4"/>
                                             <constraint firstItem="1ga-eZ-ea4" firstAttribute="leading" secondItem="guS-Ny-Eoi" secondAttribute="leading" constant="76" id="2Z5-fa-OOq"/>
+                                            <constraint firstItem="5Hj-5v-zdb" firstAttribute="centerY" secondItem="fJb-Lg-L0x" secondAttribute="centerY" id="4fe-zR-5nn"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="leading" secondItem="1ga-eZ-ea4" secondAttribute="leading" id="8BD-ni-uVJ"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="trailing" secondItem="1ga-eZ-ea4" secondAttribute="trailing" id="8mi-Mb-Z2E"/>
                                             <constraint firstItem="u1O-sX-rox" firstAttribute="leading" secondItem="ny9-1Q-kra" secondAttribute="trailing" constant="13" id="Eig-vB-LbJ"/>
                                             <constraint firstAttribute="bottom" secondItem="bPm-WX-bCZ" secondAttribute="bottom" constant="230" id="Jf2-tn-zLB"/>
                                             <constraint firstItem="ny9-1Q-kra" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="LNr-y4-KEG"/>
-                                            <constraint firstItem="5Hj-5v-zdb" firstAttribute="centerY" secondItem="fJb-Lg-L0x" secondAttribute="centerY" id="UIH-Lv-fTf"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="centerX" secondItem="cTP-7J-lX4" secondAttribute="centerX" id="X1k-6x-JMt"/>
+                                            <constraint firstItem="5Hj-5v-zdb" firstAttribute="leading" secondItem="fJb-Lg-L0x" secondAttribute="trailing" constant="-25" id="XFd-9Q-Uix"/>
                                             <constraint firstItem="Uxs-Xt-N7W" firstAttribute="top" secondItem="guS-Ny-Eoi" secondAttribute="top" constant="10" id="Zj2-5Q-7Ml"/>
                                             <constraint firstItem="DuU-pY-FfB" firstAttribute="centerY" secondItem="1ga-eZ-ea4" secondAttribute="centerY" id="b4U-7Q-XWX"/>
                                             <constraint firstAttribute="height" constant="550" id="dB8-Gg-AJL"/>
@@ -175,7 +178,6 @@
                         <constraints>
                             <constraint firstItem="yNd-HR-4JP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1WO-n6-agT"/>
                             <constraint firstItem="guS-Ny-Eoi" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="8e4-3n-0bC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Hj-5v-zdb" secondAttribute="trailing" constant="55" id="aC2-w1-Z3l"/>
                             <constraint firstItem="yNd-HR-4JP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c8v-6w-QmJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yNd-HR-4JP" secondAttribute="bottom" id="nw4-fn-DpE"/>
                         </constraints>

@@ -46,5 +46,4 @@ class GroupsViewController: UIViewController {
         groupsTableView.dataSource = self
 
     }
-
 }

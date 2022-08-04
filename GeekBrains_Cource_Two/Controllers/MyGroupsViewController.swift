@@ -9,15 +9,11 @@ import UIKit
 
 class MyGroupsViewController: UIViewController {
 
-
     @IBOutlet weak var myGroupsTableView: UITableView!
-
 
     var myGroupsArray = [Groups]()
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +70,4 @@ extension MyGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         let actions = UISwipeActionsConfiguration(actions: [actionDelete])
         return actions
 }
-
-
 }

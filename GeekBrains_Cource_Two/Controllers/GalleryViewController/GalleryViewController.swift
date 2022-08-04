@@ -20,7 +20,6 @@ class GalleryViewController: UIViewController {
 
         collectionView.delegate = self
         collectionView.dataSource = self
-
         
         collectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierCustom)
     }

@@ -11,8 +11,6 @@ import UIKit
 
 var friendsArray: [Friend] = []
 
-
-
 //MARK: - методы
 
 func fillNewArray(friends: [Friend]) -> [Character:[Friend]] {

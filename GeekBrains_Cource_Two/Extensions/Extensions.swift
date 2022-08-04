@@ -15,7 +15,6 @@ extension UIViewController {
         let tapRecognizer = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
         view.addGestureRecognizer(tapRecognizer)
 
-
         //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         ////указываем с какого элемента или целого view считывать информацию
         //        self.view.addGestureRecognizer(tapRecognizer)
@@ -24,8 +23,6 @@ extension UIViewController {
         //    @objc func tapFunction() {
         //        //сам метод скрывающий клавиатуру
         //        self.view.endEditing(true)
-
-
     }
     ///вызываем алерт тайтлом "Ошибка!" и с тексом ошибки message
     func alertErrorMessage(message: String) {

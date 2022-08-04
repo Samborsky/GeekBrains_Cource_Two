@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845AE4CB289C3F6A005F9B77 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AE4CA289C3F6A005F9B77 /* Singleton.swift */; };
 		84684EE02826A54800ADE6AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84684EDF2826A54800ADE6AD /* AppDelegate.swift */; };
 		84684EE22826A54800ADE6AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84684EE12826A54800ADE6AD /* SceneDelegate.swift */; };
 		84684EE42826A54800ADE6AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84684EE32826A54800ADE6AD /* LoginViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		845AE4CA289C3F6A005F9B77 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		84684EDC2826A54800ADE6AD /* GeekBrains_Cource_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrains_Cource_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84684EDF2826A54800ADE6AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84684EE12826A54800ADE6AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				AC801981283589A100135395 /* Friends.swift */,
 				AC801983283589B400135395 /* Groups.swift */,
 				ACA4CD5B2871AD9500A1590E /* News.swift */,
+				845AE4CA289C3F6A005F9B77 /* Singleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				ACA4CD592870F4BC00A1590E /* NewsTableViewCell.swift in Sources */,
 				AC15829B284691A700D662B0 /* GalleryCollectionCell.swift in Sources */,
 				AC80198828358C1200135395 /* CustomTableViewCell.swift in Sources */,
+				845AE4CB289C3F6A005F9B77 /* Singleton.swift in Sources */,
 				84684EE42826A54800ADE6AD /* LoginViewController.swift in Sources */,
 				AC18DA79286E2950006EDD75 /* GalleryViewController+DataSource.swift in Sources */,
 				ACC5E577286B7D73001754F3 /* LikeControll.swift in Sources */,

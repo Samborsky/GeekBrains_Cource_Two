@@ -12,8 +12,6 @@ import UIKit
 var loginArray = [String?]()
 var passwordArray = [String?]()
 
-var userDefaults = UserDefaults.standard
-
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var loginTextFieldView2: UITextField!
@@ -29,10 +27,7 @@ class RegistrationViewController: UIViewController {
         loginTextFieldView2.delegate = self
         passwordTextFieldView2.delegate = self
         repeatPasswordView2.delegate = self
-        
-
     }
-
 
     ///нажатие и логика кнопки "Зарегистрироваться"
     @IBAction func registrationButtonView2(_ sender: Any) {

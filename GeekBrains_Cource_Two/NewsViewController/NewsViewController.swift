@@ -21,11 +21,10 @@ let reuseIdentifierNews = "reuseIdentifierNews"
 
         fillNewsArray()
 
-
-
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierNews)
-
+   
     }
+  
 
 }
 extension NewsViewController: UITableViewDelegate {
@@ -53,7 +52,6 @@ extension NewsViewController: UITableViewDataSource {
       print("test")
 
     }
-
 
     func numberOfSections(in tableView: UITableView) -> Int {
         1

@@ -26,8 +26,6 @@ class FriendsViewController: UIViewController {
     var searchFriendsArray = [Friend]()
     var sortedArray = [Character:[Friend]]()
 
-    
-
     //MARK: - жизненные циклы
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +67,6 @@ class FriendsViewController: UIViewController {
                 lettersArray.append(letter)
             }
         }
-
     }
 
 //формируем новый массив друзей с учетом первой буквы
@@ -83,7 +80,6 @@ var resultArray = [Friend]()
         }
         return resultArray
     }
-
 
 //делаем переход по сеге и кастим до нужных классов
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,7 +115,4 @@ extension FriendsViewController: UISearchBarDelegate {
         }
         self.myFriendsTableView.reloadData()
     }
-
 }
-
-
