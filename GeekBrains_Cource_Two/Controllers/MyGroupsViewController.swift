@@ -11,6 +11,10 @@ class MyGroupsViewController: UIViewController {
 
     @IBOutlet weak var myGroupsTableView: UITableView!
 
+    let singletone = Singleton.shared
+    let service = Service()
+    
+    
     var myGroupsArray = [Groups]()
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
@@ -22,7 +26,11 @@ class MyGroupsViewController: UIViewController {
 
         myGroupsTableView.dataSource = self
         myGroupsTableView.delegate = self
-   // Do any additional setup after loading the view.
+   
+//список групп
+        service.getGroups(token: singletone.token)
+
+        
     }
 
 //сега exit при нажатии на ячейку, возращаемся на экран, на котром были ранее

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pR5-F0-msN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fVv-o1-jPM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -201,7 +201,7 @@
         <!--Мои друзья-->
         <scene sceneID="eMv-qa-TqJ">
             <objects>
-                <viewController id="vHt-Sg-ujX" customClass="FriendsViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendsViewController" id="vHt-Sg-ujX" customClass="FriendsViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6wG-YI-x3d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -433,7 +433,7 @@
         <!--Registration View Controller-->
         <scene sceneID="YzL-gh-LoN">
             <objects>
-                <viewController id="6FO-2z-cgL" customClass="RegistrationViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationViewController" id="6FO-2z-cgL" customClass="RegistrationViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDD-fd-22O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,7 +592,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="0EH-7l-GW4">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="adI-7r-S8Q" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" automaticallyAdjustsScrollViewInsets="NO" id="adI-7r-S8Q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="N54-r4-bMl"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kkt-S3-ene">
@@ -649,6 +649,41 @@
             </objects>
             <point key="canvasLocation" x="4484" y="960"/>
         </scene>
+        <!--Login Web View Controller-->
+        <scene sceneID="4IJ-VQ-9Cc">
+            <objects>
+                <viewController storyboardIdentifier="LoginWebViewController" id="fVv-o1-jPM" customClass="LoginWebViewController" customModule="GeekBrains_Cource_Two" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5M0-JR-MJy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1j-U4-CoN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rsu-G1-jn8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rsu-G1-jn8" firstAttribute="trailing" secondItem="J1j-U4-CoN" secondAttribute="trailing" id="3KO-jn-sh1"/>
+                            <constraint firstItem="rsu-G1-jn8" firstAttribute="bottom" secondItem="J1j-U4-CoN" secondAttribute="bottom" id="7xR-ge-VVN"/>
+                            <constraint firstItem="J1j-U4-CoN" firstAttribute="leading" secondItem="rsu-G1-jn8" secondAttribute="leading" id="XC7-9a-sMB"/>
+                            <constraint firstItem="J1j-U4-CoN" firstAttribute="top" secondItem="rsu-G1-jn8" secondAttribute="top" id="You-5F-66F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="J1j-U4-CoN" id="9ih-j3-dcu"/>
+                        <segue destination="adI-7r-S8Q" kind="presentation" identifier="fromLoginToTabBar" modalPresentationStyle="fullScreen" id="ZxK-cU-80g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EnC-KI-PLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1181" y="-431"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="nKZ-RY-2IS">
             <objects>
@@ -687,6 +722,9 @@
             <point key="canvasLocation" x="4483" y="142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZxK-cU-80g"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="VK_logo" width="552" height="96"/>
         <image name="eye" catalog="system" width="128" height="81"/>

@@ -9,6 +9,10 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
+    let singletone = Singleton.shared
+    let service = Service()
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
@@ -22,6 +26,9 @@ class GalleryViewController: UIViewController {
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierCustom)
+        
+        service.getFriendPhotos(token: singletone.token, userID: singletone.userID)
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

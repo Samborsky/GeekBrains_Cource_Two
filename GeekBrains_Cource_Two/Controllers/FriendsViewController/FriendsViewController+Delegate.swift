@@ -18,6 +18,10 @@ extension FriendsViewController: UITableViewDelegate {
 
         ///переход на GalleryViewController при нажатии на ячейку в таблице
         performSegue(withIdentifier: fromFriendsToGallerySeague, sender: nil)
+        
+//здесь нужно будет сохранять id пользователя в синглтон и потом использовать его для отображения его фотографий
+        
+        
     }
 }
 

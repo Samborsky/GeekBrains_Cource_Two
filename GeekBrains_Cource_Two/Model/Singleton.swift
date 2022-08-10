@@ -18,5 +18,5 @@ class Singleton {
     private init() {}
     
     var token: String = ""
-    var userID: String = ""
+    var userID: String = "8981726"
 }

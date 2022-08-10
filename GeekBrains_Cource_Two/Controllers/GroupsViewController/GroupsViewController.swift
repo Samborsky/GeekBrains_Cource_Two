@@ -10,6 +10,8 @@ class GroupsViewController: UIViewController {
 
     @IBOutlet weak var groupsTableView: UITableView!
 
+  
+    
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let FromGroupsToMygroups = "FromGroupsToMygroups"
     var groupsArray: [Groups] = []
@@ -45,5 +47,7 @@ class GroupsViewController: UIViewController {
         
         groupsTableView.dataSource = self
 
+
+        
     }
 }

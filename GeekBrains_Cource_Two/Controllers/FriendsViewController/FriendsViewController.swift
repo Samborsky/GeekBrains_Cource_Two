@@ -13,6 +13,10 @@ class FriendsViewController: UIViewController {
 
     @IBOutlet weak var myFriendsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    let singletone = Singleton.shared
+    var service = Service()
+    
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendsToGallerySeague = "fromFriendsToGallery"
@@ -55,6 +59,11 @@ class FriendsViewController: UIViewController {
 
         searchBar.delegate = self
         searchBar.placeholder = "Начните вводить имя друга"
+        
+        //список друзей
+        service.getFriends(token: singletone.token)
+
+        
     }
 
     //MARK: - IBAtion и методы
