@@ -10,6 +10,10 @@ import UIKit
 class FriendsViewController: UIViewController {
 
     //MARK: - аутлеты и переменные
+    
+    
+    var realFriendsArray = [FriendsPropetries]()
+
 
     @IBOutlet weak var myFriendsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -20,7 +24,7 @@ class FriendsViewController: UIViewController {
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendsToGallerySeague = "fromFriendsToGallery"
-    let cellHight = CGFloat(130)
+    let cellHight = CGFloat(100)
 
     var lettersArray = [String]()
     //массив первых букв для серчбара
@@ -34,7 +38,9 @@ class FriendsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         myFriendsTableView.reloadData()
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -59,13 +65,16 @@ class FriendsViewController: UIViewController {
 
         searchBar.delegate = self
         searchBar.placeholder = "Начните вводить имя друга"
-        
-        //список друзей
-        service.getFriends(token: singletone.token)
 
+        
+        service.getFriends(token: singletone.token) { friends in
+            let friends = friends.items
+            self.realFriendsArray = friends
+            self.myFriendsTableView.reloadData()
+        }
         
     }
-
+    
     //MARK: - IBAtion и методы
 
 ///метод который добавляет первую  букву имени в новый массив
@@ -96,10 +105,12 @@ var resultArray = [Friend]()
            let destinationVC = segue.destination as? GalleryViewController,
            let indexPath = myFriendsTableView.indexPathForSelectedRow {
             //передаем имя из массива в тайтл
-            destinationVC.title = test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].name
-            //передаем фотографии в массив фотографий на GalleryViewController
-            destinationVC.photos = test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].photos//можно использовать friends.photos
-            print(indexPath)
+            
+//            destinationVC.title = test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].name
+//            передаем фотографии в массив фотографий на GalleryViewController
+//            destinationVC.photos = test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row].photos//можно использовать friends.photos
+            
+            
         }
     }
 }

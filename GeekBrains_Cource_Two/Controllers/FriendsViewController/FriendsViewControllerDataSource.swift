@@ -11,27 +11,31 @@ extension FriendsViewController: UITableViewDataSource {
 
     ///метод количества секций в таблице, по умолчанию == 1, если секций не больше 1, можно его не писать
     func numberOfSections(in tableView: UITableView) -> Int {
-        return lettersArray.count
+        return 1
     }
     ///метод количества строк в таблице
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let a = test(sourceArray: friendsArray, letter: lettersArray[section])
-        return a.count
+//    let a = test(sourceArray: friendsArray, letter: lettersArray[section])
+
+        return realFriendsArray.count
+        
     }
 
     //метод позволяющий заполнять ячейки таблицы
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //приводим нашу ячейку к типу xib файла(UITableViewCell)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { preconditionFailure("error") }
-        //делаем аватарку круглой
-        cell.viewForShadow.layer.cornerRadius = cell.viewForShadow.bounds.height / 2
-        cell.avatarImageView.layer.cornerRadius = cell.avatarImageView.bounds.height / 2
-        
+      
         //конфигурируем ячейку, наполняя ее данными
-        cell.configure(friend: test(sourceArray: friendsArray, letter: lettersArray[indexPath.section])[indexPath.row])
+//        cell.configure(friend: testArray[indexPath.row])
+        cell.configure(friend: realFriendsArray[indexPath.row], image: realFriendsArray[indexPath.row].avatar)
+        
+
 return cell
     }
 
+    //MARK: - удаляем строку при свайпе
+    
 ///метод позволяющий удалять строку при свайпе справа
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") { _,_,_  in friendsArray.remove(at: indexPath.row)
@@ -64,6 +68,8 @@ return cell
 
 //
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return lettersArray[section].uppercased()
+        
+        return "hello"
+//        return lettersArray[section].uppercased()
     }
 }

@@ -16,8 +16,19 @@ extension FriendsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("нажата строка \(indexPath.row) в секции \(indexPath.section). Вкладка друзья")
 
+        
+
+        singletone.userID = realFriendsArray[indexPath.row].id!
+        
+
         ///переход на GalleryViewController при нажатии на ячейку в таблице
         performSegue(withIdentifier: fromFriendsToGallerySeague, sender: nil)
+        print(singletone.userID)
+        
+//        print(realFriendsArray[indexPath.row].photo100)
+        
+        
+        
         
 //здесь нужно будет сохранять id пользователя в синглтон и потом использовать его для отображения его фотографий
         

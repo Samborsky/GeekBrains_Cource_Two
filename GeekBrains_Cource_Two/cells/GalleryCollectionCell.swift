@@ -9,11 +9,15 @@ import UIKit
 
 class GalleryCollectionCell: UICollectionViewCell {
 
+    let singletone = Singleton.shared
+    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var likePhoto: UIImageView!
     @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var likeControl: LikeControll!
     @IBOutlet weak var container: UIView!
+    
+    
 
     var likes = Array(1...550)
 
@@ -22,6 +26,7 @@ class GalleryCollectionCell: UICollectionViewCell {
             if likeControl.isLike {
                 likeControl.likePhoto.image = UIImage(systemName: "heart")
                 likesCount.text = ""
+                print(singletone.userID)
             } else {
                 likeControl.likePhoto.image = UIImage(systemName: "heart.fill")
                 likesCount.text = (String(likes.randomElement()! + 1))
@@ -49,7 +54,9 @@ class GalleryCollectionCell: UICollectionViewCell {
         self.photoImageView.image = nil
     }
 
-    func configure(image: UIImage) {
-        photoImageView.image = image
+    func configure(sdImage: String?) {
+        if sdImage != nil {
+        photoImageView.sd_setImage(with: URL(string: sdImage!))
+    }
     }
 }

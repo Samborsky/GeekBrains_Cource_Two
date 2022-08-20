@@ -27,7 +27,7 @@ class UIViewForShadow: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-//        avatar.layer.cornerRadius = bounds.height / 2
-//        shadowView.layer.cornerRadius = bounds.height / 2
+        avatar.layer.cornerRadius = bounds.height / 2
+        shadowView.layer.cornerRadius = bounds.height / 2
     }
 }

@@ -10,7 +10,6 @@ class GroupsViewController: UIViewController {
 
     @IBOutlet weak var groupsTableView: UITableView!
 
-  
     
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let FromGroupsToMygroups = "FromGroupsToMygroups"

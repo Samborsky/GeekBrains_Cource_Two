@@ -14,6 +14,7 @@ class MyGroupsViewController: UIViewController {
     let singletone = Singleton.shared
     let service = Service()
     
+    var realMyGroupsArray = [GroupsProperties]()
     
     var myGroupsArray = [Groups]()
 
@@ -26,9 +27,15 @@ class MyGroupsViewController: UIViewController {
 
         myGroupsTableView.dataSource = self
         myGroupsTableView.delegate = self
-   
+
+        
+        service.getGroups(token: singletone.token) { group in
+            let data = group.items
+            self.realMyGroupsArray = data
+            self.myGroupsTableView.reloadData()
+        }
 //список групп
-        service.getGroups(token: singletone.token)
+
 
         
     }
@@ -53,26 +60,25 @@ class MyGroupsViewController: UIViewController {
 extension MyGroupsViewController: UITableViewDataSource, UITableViewDelegate {
     //количество строк в таблице
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myGroupsArray.count
+        return realMyGroupsArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell else { return UITableViewCell()}
 
-        cell.avatarImageView.image = myGroupsArray[indexPath.row].avatar
-        cell.ageLabel.text = myGroupsArray[indexPath.row].description
-        cell.nameLabel.text = myGroupsArray[indexPath.row].title
-        cell.viewForShadow.layer.shadowColor = UIColor.white.cgColor
-
+//        cell.avatarImageView.image = realMyGroupsArray[indexPath.row].photo
+        cell.configure(group: realMyGroupsArray[indexPath.row], image: realMyGroupsArray[indexPath.row].photo)
+        cell.viewForShadow.layer.shadowColor = UIColor.red.cgColor
+       
         return cell
     }
 ///размер картинки в таблице
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 100
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in self.myGroupsArray.remove(at: indexPath.row)
+        let actionDelete = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in self.realMyGroupsArray.remove(at: indexPath.row)
             tableView.reloadData() }
 
         let actions = UISwipeActionsConfiguration(actions: [actionDelete])

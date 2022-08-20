@@ -7,6 +7,8 @@ target 'GeekBrains_Cource_Two' do
 
 pod 'Alamofire'
 pod 'RealmSwift', '~>10'
+pod 'SDWebImage', '~> 5.0'
+
 
   # Pods for GeekBrains_Cource_Two
 

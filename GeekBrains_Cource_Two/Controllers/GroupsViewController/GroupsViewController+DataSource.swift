@@ -11,7 +11,7 @@ extension GroupsViewController: UITableViewDataSource {
 
 ///метод позволяющий менять размер изображения в ячейке(высоту ячейки)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
 
     ///метод количества секций в таблице

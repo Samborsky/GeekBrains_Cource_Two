@@ -8,14 +8,14 @@
 import UIKit
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return realPhotosArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierCustom, for: indexPath) as? GalleryCollectionCell else { return UICollectionViewCell()}
-
-        cell.configure(image: photos[indexPath.item])
-
+        
+        cell.configure(sdImage: realPhotosArray[indexPath.item])
+    
         return cell
     }
 

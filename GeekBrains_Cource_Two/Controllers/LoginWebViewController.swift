@@ -16,6 +16,8 @@ class LoginWebViewController: UIViewController {
     var friendsViewController: FriendsViewController?
     
     
+    
+    
     @IBOutlet weak var webView: WKWebView!
 
     override func viewDidLoad() {
@@ -24,6 +26,8 @@ class LoginWebViewController: UIViewController {
         webView.navigationDelegate = self
 
         requestVK()
+        
+        
     }
     
     let urlTest = "https://oauth.vk.com/authorize?client_id=51397505&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&response_type=token"
