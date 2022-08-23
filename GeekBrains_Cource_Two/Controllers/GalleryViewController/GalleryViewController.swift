@@ -17,6 +17,9 @@ class GalleryViewController: UIViewController {
 //массив с url фотографий
     var realPhotosArray = [String]()
     
+    var bigPhotosArray = [String]()
+
+    
     var likesArray = [Int]()
     
     
@@ -33,31 +36,37 @@ class GalleryViewController: UIViewController {
         
         service.getFriendPhotos(token: singletone.token, userID: singletone.userID) { friendsPhotos in
             
-//вытаскиваем url фотографий
-            for item in friendsPhotos {
-                for photo in item.sizes {
-                    if photo.type == "y" {
-                        self.realPhotosArray.append(photo.url)
-                    }
-                }
-            }
+            //вытаскиваем url фотографий
+                        for item in friendsPhotos {
+                            for photo in item.sizes {
+                                if photo.type == "m" {
+                                    self.realPhotosArray.append(photo.url)
+                                }
+                                if photo.type == "x" {
+                                    self.bigPhotosArray.append(photo.url)
+                                }
+                            }
+                        }
 
-            self.collectionView.reloadData()
-        }
+                        self.collectionView.reloadData()
+                    }
  
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "toFullSizePhoto",
+        guard segue.identifier == "ToBigPhotoViewController",
               
               //indexPathsForSelectedItems?.first позволяет вызвать первый элемент массива. Так он будет работать, как обычный IndexPath
               let selectedPhoto = collectionView.indexPathsForSelectedItems?.first,
-        let destinationVC = segue.destination as? FullSizePhotoViewController else { return }
+        let destinationVC = segue.destination as? BigPhotoViewController else { return }
 
         destinationVC.selectedPhotoIndex = selectedPhoto.item
-        destinationVC.fullSizePhotosArray = realPhotosArray
-//        destinationVC.fullSizePhoto.sd_setImage(with: URL(string: destinationVC.fullSizePhotosArray[selectedPhoto.item]))
-        print(selectedPhoto.row)
+        destinationVC.photosArray = bigPhotosArray
+        
+        
+        
+
+        print("\(selectedPhoto.row) hahah")
 
     }
 }

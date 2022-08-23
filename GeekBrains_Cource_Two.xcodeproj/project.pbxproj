@@ -16,6 +16,9 @@
 		84684EEC2826A54F00ADE6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84684EEA2826A54F00ADE6AD /* LaunchScreen.storyboard */; };
 		846B354E28A2F46B0078F705 /* LoginWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B354D28A2F46B0078F705 /* LoginWebViewController.swift */; };
 		846B355028A314A10078F705 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B354F28A314A10078F705 /* Service.swift */; };
+		84D4529828B426F200D11C23 /* BigPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4529728B426F200D11C23 /* BigPhotoViewController.swift */; };
+		84D4529B28B427A200D11C23 /* BigPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4529928B427A200D11C23 /* BigPhotoCollectionViewCell.swift */; };
+		84D4529C28B427A200D11C23 /* BigPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4529A28B427A200D11C23 /* BigPhotoCollectionViewCell.xib */; };
 		84F628B628A987A600DBC90F /* FriendsPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F628B528A987A600DBC90F /* FriendsPhotos.swift */; };
 		AC15829B284691A700D662B0 /* GalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC158299284691A700D662B0 /* GalleryCollectionCell.swift */; };
 		AC15829C284691A700D662B0 /* GalleryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC15829A284691A700D662B0 /* GalleryCollectionCell.xib */; };
@@ -67,6 +70,9 @@
 		84684EED2826A54F00ADE6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B354D28A2F46B0078F705 /* LoginWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebViewController.swift; sourceTree = "<group>"; };
 		846B354F28A314A10078F705 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		84D4529728B426F200D11C23 /* BigPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPhotoViewController.swift; sourceTree = "<group>"; };
+		84D4529928B427A200D11C23 /* BigPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		84D4529A28B427A200D11C23 /* BigPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		84F628B528A987A600DBC90F /* FriendsPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotos.swift; sourceTree = "<group>"; };
 		8C7659A7C5FA8A2027642C50 /* Pods-GeekBrains_Cource_Two.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekBrains_Cource_Two.debug.xcconfig"; path = "Target Support Files/Pods-GeekBrains_Cource_Two/Pods-GeekBrains_Cource_Two.debug.xcconfig"; sourceTree = "<group>"; };
 		AC158299284691A700D662B0 /* GalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionCell.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				AC18DA76286E2943006EDD75 /* GalleryViewController+Delegate.swift */,
 				AC18DA78286E2950006EDD75 /* GalleryViewController+DataSource.swift */,
 				AC9768D6286CC63E009DF5BA /* FullSizePhotoViewController.swift */,
+				84D4529728B426F200D11C23 /* BigPhotoViewController.swift */,
 			);
 			path = GalleryViewController;
 			sourceTree = "<group>";
@@ -226,6 +233,8 @@
 				AC158299284691A700D662B0 /* GalleryCollectionCell.swift */,
 				AC15829A284691A700D662B0 /* GalleryCollectionCell.xib */,
 				ACC5E576286B7D73001754F3 /* LikeControll.swift */,
+				84D4529928B427A200D11C23 /* BigPhotoCollectionViewCell.swift */,
+				84D4529A28B427A200D11C23 /* BigPhotoCollectionViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -335,6 +344,7 @@
 				ACD90C532891C26D00F106CD /* skryabin.mp3 in Resources */,
 				ACF658D72891CC5400309B91 /* hardDrive.mp3 in Resources */,
 				AC80198928358C1200135395 /* CustomTableViewCell.xib in Resources */,
+				84D4529C28B427A200D11C23 /* BigPhotoCollectionViewCell.xib in Resources */,
 				84684EE72826A54800ADE6AD /* Main.storyboard in Resources */,
 				ACD90C522891C26D00F106CD /* queen.mp3 in Resources */,
 				AC32D7B328777AA4001AF840 /* gribi.mp3 in Resources */,
@@ -411,9 +421,11 @@
 				AC18DA83286E3057006EDD75 /* GroupsViewController+FillData.swift in Sources */,
 				AC80198E283592C800135395 /* GroupsViewController.swift in Sources */,
 				AC80198C2835922400135395 /* FriendsViewController.swift in Sources */,
+				84D4529828B426F200D11C23 /* BigPhotoViewController.swift in Sources */,
 				AC18DA7B286E2F08006EDD75 /* FriendsViewController+Delegate.swift in Sources */,
 				AC9768D7286CC63F009DF5BA /* FullSizePhotoViewController.swift in Sources */,
 				AC95C83D286B6BF2008AB8FE /* UIViewForShadow.swift in Sources */,
+				84D4529B28B427A200D11C23 /* BigPhotoCollectionViewCell.swift in Sources */,
 				84684EE02826A54800ADE6AD /* AppDelegate.swift in Sources */,
 				84F628B628A987A600DBC90F /* FriendsPhotos.swift in Sources */,
 				AC4F628028311EB700EB6B62 /* RegistrationViewController.swift in Sources */,

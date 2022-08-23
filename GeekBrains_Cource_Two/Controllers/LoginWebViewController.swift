@@ -27,7 +27,7 @@ class LoginWebViewController: UIViewController {
 
         requestVK()
         
-        
+        //https://oauth.vk.com/authorize?client_id=51408419
     }
     
     let urlTest = "https://oauth.vk.com/authorize?client_id=51397505&redirect_uri=https://oauth.vk.com/blank.html&display=mobile&response_type=token"
@@ -42,18 +42,34 @@ class LoginWebViewController: UIViewController {
         constructor.path = "/authorize"
         
         constructor.queryItems = [
-        URLQueryItem(name: "client_id", value: "51397505"),
+        URLQueryItem(name: "client_id", value: "51408419"),
         URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
         URLQueryItem(name: "display", value: "mobile"),
         URLQueryItem(name: "response_type", value: "token"),
-        URLQueryItem(name: "scope", value: "offline")
+        URLQueryItem(name: "test_mode", value: "1")
+
         ]
         let request = URLRequest(url: constructor.url!)
 
         webView.load(request)
+        print("123")
+        print(singleton.token)
   
     }
+    
+    
+    @IBAction func exitButton(_ sender: UIButton) {
+        
+        WKWebsiteDataStore.default().removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), modifiedSince: Date(timeIntervalSince1970: 0)) {
+            self.singleton.token = ""
+            self.webView.load(URLRequest(url: URL(string: "https://google.com")!))
+        }
+    }
+    
+    
 }
+
+
 
 extension LoginWebViewController: WKNavigationDelegate {
   
@@ -112,4 +128,8 @@ print("fragment is \(fragment)")//выведет access_token, expires_in и use
         decisionHandler(.cancel)
     }
 
+    
+    
+    
+    
 }
