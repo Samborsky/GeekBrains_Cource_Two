@@ -42,7 +42,7 @@ class LoginWebViewController: UIViewController {
         constructor.path = "/authorize"
         
         constructor.queryItems = [
-        URLQueryItem(name: "client_id", value: "51408419"),
+        URLQueryItem(name: "client_id", value: "51408740"),
         URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
         URLQueryItem(name: "display", value: "mobile"),
         URLQueryItem(name: "response_type", value: "token"),
@@ -86,7 +86,7 @@ extension LoginWebViewController: WKNavigationDelegate {
                   return
               }
         
-print("fragment is \(fragment)")//выведет access_token, expires_in и user_id в строковом виде
+//print("fragment is \(fragment)")//выведет access_token, expires_in и user_id в строковом виде
         
         let params = fragment.components(separatedBy: "&").map { data in
             data.components(separatedBy: "=")
@@ -94,9 +94,9 @@ print("fragment is \(fragment)")//выведет access_token, expires_in и use
             .reduce([String:String]()) { res, param in
             
             //создаст масив с элементами access_token, expires_in и user_id
-            print("&&&&&&&& =  \(fragment.components(separatedBy: "&"))")
+//            print("&&&&&&&& =  \(fragment.components(separatedBy: "&"))")
             //добавление связки access_token, expires_in и user_id в отдельный массив, например ["expires_in", "0"]
-            print("&=&=&=&=&=&=&=&=&=&=\(fragment.components(separatedBy: "&").map{$0.components(separatedBy: "=")})")
+//            print("&=&=&=&=&=&=&=&=&=&=\(fragment.components(separatedBy: "&").map{$0.components(separatedBy: "=")})")
             
             //создали словарь
             var dict = res
@@ -110,13 +110,13 @@ print("fragment is \(fragment)")//выведет access_token, expires_in и use
         }
         
         
-        print("params is \(params)")//превратили прошлую связку в словарь, например ["expires_in": "0"]
+//        print("params is \(params)")//превратили прошлую связку в словарь, например ["expires_in": "0"]
         guard let token = params["access_token"] else {return}
         
 //записываем токен в синглон
             singleton.token = token
         
-            print("token has shown at LoginView. Token is - \n \(singleton.token)\n")
+//            print("token has shown at LoginView. Token is - \n \(singleton.token)\n")
             guard let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FriendsViewController") as? FriendsViewController else {return}
             //разворачиваем вьюКонтроллер на весь экран
             secondVC.modalPresentationStyle = .fullScreen
