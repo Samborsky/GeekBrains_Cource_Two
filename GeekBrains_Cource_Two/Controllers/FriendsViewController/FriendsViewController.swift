@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class FriendsViewController: UIViewController {
 
@@ -13,6 +14,7 @@ class FriendsViewController: UIViewController {
     
     
     var realFriendsArray = [FriendsPropetries]()
+    
 
 
     @IBOutlet weak var myFriendsTableView: UITableView!
@@ -66,13 +68,22 @@ class FriendsViewController: UIViewController {
         searchBar.delegate = self
         searchBar.placeholder = "Начните вводить имя друга"
 
+        //MARK: -  получение списка друзей через запрос к серверу
+//        service.getFriends(token: singletone.token) { friends in
+//            let friends = friends.items
+//            self.realFriendsArray = friends
+//            print(self.realFriendsArray.count)
+//            self.myFriendsTableView.reloadData()
+//            self.service.saveFriendToRealm(friendsArray: self.realFriendsArray)
+////            print(self.realFriendsArray)
+//        }
         
-        service.getFriends(token: singletone.token) { friends in
-            let friends = friends.items
-            self.realFriendsArray = friends
-            self.myFriendsTableView.reloadData()
-        }
-        
+        //MARK: - выгрузка друзей из realm
+//        print(realFriendsArray.count)
+        realFriendsArray = service.readFriendsRealm()
+        print(realFriendsArray.count)
+//        print(realFriendsArray.count)
+
     }
     
     //MARK: - IBAtion и методы

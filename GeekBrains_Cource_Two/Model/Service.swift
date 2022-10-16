@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import CoreMedia
 import SDWebImage
+import RealmSwift
 
 class Service {
     
@@ -40,10 +41,12 @@ class Service {
 
             if let data = data.data {
                 let friendsResponse = try? JSONDecoder().decode(ResponseFriends.self, from: data)
-//      
-                guard let friends = friendsResponse?.response else {return}
                 
-          complition(friends)
+                guard let complitionFriends = friendsResponse?.response else {return}
+                guard let friends = friendsResponse?.response.items else {return}
+                self.saveFriendToRealm(friendsArray: friends)
+                
+          complition(complitionFriends)
                 
             }
         }
@@ -110,5 +113,32 @@ class Service {
         }
         }
     }
- 
+    //MARK: - Realm
+ ///создание базы данных со списком друзей
+   func saveFriendToRealm(friendsArray: [FriendsPropetries]) {
+        let realm = try! Realm()
+        
+        try! realm.write{
+            realm.add(friendsArray)
+        }
+    }
+    
+    ///загрузка списка друзей из базы realm
+    func readFriendsRealm() -> [FriendsPropetries] {
+        let realm = try! Realm()
+        
+        ///кастим объект realm до нужного класса и передаем его в массив друзей
+        let friends = realm.objects(FriendsPropetries.self)
+        let friendsArray = Array(friends)
+        
+        return friendsArray
+    }
+    
+    func saveFriendsPhotosRealm() {
+        
+    }
+    
+    func loadFriendsPhotosRealm() {
+        
+    }
 }

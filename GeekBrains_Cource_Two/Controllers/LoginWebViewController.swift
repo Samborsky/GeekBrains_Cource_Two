@@ -52,7 +52,7 @@ class LoginWebViewController: UIViewController {
         let request = URLRequest(url: constructor.url!)
 
         webView.load(request)
-        print("123")
+        
         print(singleton.token)
   
     }
